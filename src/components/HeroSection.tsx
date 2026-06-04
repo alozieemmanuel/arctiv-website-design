@@ -7,7 +7,7 @@ const VIDEO_URL =
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-screen flex flex-col overflow-hidden">
+    <section className="relative w-full min-h-[85vh] md:min-h-screen flex flex-col overflow-hidden">
       {/* ── Video background ──────────────────────────── */}
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"

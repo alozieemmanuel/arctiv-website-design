@@ -62,7 +62,7 @@ export default function Footer() {
 
                     {/* ── Col 1: Brand ──────────────────────────────────── */}
                     <div className="lg:col-span-1">
-                        <img src="artiv-logo.png" alt="Artiv logo" className="h-8 w-8 object-contain" />
+                        <img src="/artiv-logo.png" alt="Artiv logo" className="h-8 w-8 object-contain" />
                         <p className="text-gray-400 text-sm leading-relaxed mt-5 mb-7">
                             Emergency restoration, reconstruction, and renovation across Ontario
                             and the Greater Toronto Area. Certified, insured, and available 24/7.
