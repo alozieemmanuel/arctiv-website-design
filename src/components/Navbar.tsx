@@ -10,7 +10,7 @@ export default function Navbar() {
       <div className="liquid-glass rounded-xl px-4 py-2 flex items-center justify-between">
         {/* Logo — PNG extracted from brand image */}
         <div className="flex items-center gap-2">
-          <img src="artiv-logo.png" alt="Artiv logo" className="h-8 w-8 object-contain" />
+          <img src="/artiv-logo.png" alt="Artiv logo" className="h-8 w-8 object-contain" />
         </div>
 
         {/* Center links */}
