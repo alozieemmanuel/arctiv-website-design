@@ -75,7 +75,7 @@ export default function WhyUs() {
                         <p className="text-gray-500 text-sm leading-relaxed mb-5">
                             At Arctiv, we believe restoration should do more than repair damage. Our goal
                             is to leave your property better than before, backed by certified expertise and
-                            quality craftsmanship. From emergency response to complete renovations, we provide clear communication,
+                            quality workmanship. From emergency response to complete restorations, we provide clear communication,
                             skilled workmanship, and lasting results. We handle the complexity so you can
                             focus on moving forward.
                         </p>

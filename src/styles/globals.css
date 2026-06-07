@@ -68,3 +68,89 @@ body {
     border-bottom: none;
   }
 }
+
+:root {
+  /* ── Backgrounds ── */
+  --bg-deep:      #060d1a;      /* darkest — hero, footer */
+  --bg-navy:      #0B1F3A;      /* base navy — most sections */
+  --bg-navy-mid:  #0e2442;      /* slightly lighter navy */
+  --bg-navy-up:   #122b50;      /* cards/surface on navy */
+ 
+  /* ── Brand Accent: Copper ── */
+  --copper:       #C77B30;
+  --copper-rgb:   199, 123, 48;
+  --copper-light: #d4914d;
+  --copper-dark:  #a8651f;
+ 
+  /* ── Text ── */
+  --text-primary:   #FFFFFF;
+  --text-secondary: #b0bdcc;   /* cool blue-gray for body text on dark */
+  --text-muted:     #6B7280;   /* slate gray */
+ 
+  /* ── Emergency / Warning ── */
+  --emergency: #C77B30;        /* copper doubles as emergency accent */
+ 
+  /* ── Light section (dot-grid areas) ── */
+  --bg-light:     #f0f4f8;
+  --bg-light-mid: #e8eef6;
+}
+ 
+/* ─── Liquid glass — Navbar and glass cards ──────────────────────────────── */
+.liquid-glass {
+  background: rgba(6, 13, 26, 0.78);
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+ 
+/* ─── Copper glow utility ────────────────────────────────────────────────── */
+.copper-glow {
+  box-shadow: 0 0 32px rgba(var(--copper-rgb), 0.35);
+}
+ 
+/* ─── Scroll ─────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+ 
+/* ─── Selection ──────────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(var(--copper-rgb), 0.3);
+  color: white;
+}
+ 
+/* ─── Scrollbar ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--copper-rgb), 0.45);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--copper-rgb), 0.75);
+}
+ 
+/* ─── Focus ring ─────────────────────────────────────────────────────────── */
+*:focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 2px;
+}
+ 
+/* ─── Copper divider line ────────────────────────────────────────────────── */
+.copper-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--copper), transparent);
+}
+ 
+/* ─── Copper badge / pill ────────────────────────────────────────────────── */
+.copper-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--copper);
+}

@@ -44,7 +44,7 @@ const steps: Step[] = [
     number: '01',
     title: 'Assessment',
     description:
-      'We respond within hours, document the damage thoroughly, and provide a clear scope of work — at no charge.',
+      'We respond within an hour for an emergency service call, document the damage thoroughly, and provide a clear scope of work.',
     icon: <AssessIcon />,
   },
   {
@@ -58,7 +58,7 @@ const steps: Step[] = [
     number: '03',
     title: 'Execution',
     description:
-      'Certified technicians execute the work with precision. You receive daily progress updates from a dedicated project manager.',
+      'Certified technicians execute the work with precision. You receive progress updates from a dedicated project manager.',
     icon: <ExecuteIcon />,
   },
   {
