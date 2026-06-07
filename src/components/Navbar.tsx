@@ -1,27 +1,52 @@
 import { useState } from 'react'
+import { navigate } from '../App'
 
-const navLinks = ['About', 'Services', 'Projects', 'Contact']
+const navLinks: { label: string; path: string }[] = [
+  { label: 'About', path: '/about' },
+  { label: 'Services', path: '/#services' },
+  { label: 'Projects', path: '/projects' },
+  { label: 'Contact', path: '/contact' },
+]
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const handleNav = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (path.startsWith('/') && !path.startsWith('/#')) {
+      e.preventDefault()
+      navigate(path)
+    }
+  }
+
   return (
     <nav className="relative z-10 px-6 md:px-12 lg:px-16 pt-6">
 
       <div className="liquid-glass rounded-xl px-4 py-2 flex items-center justify-between">
-        {/* Logo — PNG extracted from brand image */}
-        <div className="flex items-center gap-2">
-          <img src="/artiv-logo.png" alt="Artiv logo" className="h-8 w-8 object-contain" />
-        </div>
+        {/* Logo */}
+        <a
+          href="/"
+          onClick={(e) => { e.preventDefault(); navigate('/') }}
+          className="flex items-center gap-3"
+        >
+          <img
+            src="/artiv-logo.png"
+            alt="Artiv"
+            className="h-8 w-8 object-contain"
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+          />
+          <span className="text-lg font-semibold tracking-wide text-white">Artiv</span>
+        </a>
 
         {/* Center links */}
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
+          {navLinks.map(({ label, path }) => (
             <a
-              key={link}
-              href="#"
+              key={label}
+              href={path}
+              onClick={(e) => handleNav(e, path)}
               className="text-sm text-white hover:text-gray-300 transition-colors duration-200"
             >
-              {link}
+              {label}
             </a>
           ))}
         </div>
@@ -46,14 +71,14 @@ export default function Navbar() {
       {/* Mobile dropdown menu */}
       {menuOpen && (
         <div className="md:hidden mt-2 liquid-glass rounded-xl px-4 py-4 flex flex-col gap-4">
-          {navLinks.map((link) => (
+          {navLinks.map(({ label, path }) => (
             <a
-              key={link}
-              href="#"
+              key={label}
+              href={path}
+              onClick={(e) => { handleNav(e, path); setMenuOpen(false) }}
               className="text-sm text-white hover:text-gray-300 transition-colors duration-200"
-              onClick={() => setMenuOpen(false)}
             >
-              {link}
+              {label}
             </a>
           ))}
           <div className="border-t border-white/10 pt-3">
@@ -63,6 +88,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-    </nav >
+    </nav>
   )
 }

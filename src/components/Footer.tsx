@@ -44,7 +44,7 @@ const LinkedInIcon = () => (
 const services = [
     'Emergency Restoration', 'Water Damage', 'Fire Damage',
     'Mould Remediation', 'Structural Drying', 'Storm Damage',
-    'Sewage Cleanup', 'Reconstruction', 'Renovation',
+    'Sewage Cleanup', 'Reconstruction', 'Renovation', 'General Contracting'
 ]
 
 const company = [

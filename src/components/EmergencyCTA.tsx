@@ -70,7 +70,7 @@ export default function EmergencyCTA() {
                         </h2>
 
                         <p className="text-gray-400 text-sm leading-relaxed max-w-lg">
-                            Floods, fires, mould can escalate quickly. Every hour without a response compounds the damage and the cost.. Arctiv crews are on standby around the clock. One call is all it takes to get the process started.
+                            Floods, fires, mould can escalate quickly. Every hour without a response compounds the damage and the cost. Arctiv crews are on standby around the clock. One call is all it takes to get the process started.
                         </p>
                     </div>
 

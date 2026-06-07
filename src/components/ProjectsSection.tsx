@@ -19,7 +19,7 @@ const projects: Project[] = [
     location: 'Mississauga, ON',
     category: 'Water Damage',
     type: 'Residential',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=75',
+    image: '/flood restoration.png',
     tag: 'Water Damage',
   },
   {
@@ -55,7 +55,7 @@ const projects: Project[] = [
     location: 'Etobicoke, ON',
     category: 'Water Damage',
     type: 'Commercial',
-    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=800&q=75',
+    image: '/Water damage.png',
     tag: 'Water Damage',
   },
   {
