@@ -41,15 +41,28 @@ const LinkedInIcon = () => (
     </svg>
 )
 
+import { navigate } from '../App'
+
 const services = [
-    'Emergency Restoration', 'Water Damage', 'Fire Damage',
-    'Mould Remediation', 'Structural Drying', 'Storm Damage',
-    'Sewage Cleanup', 'Reconstruction', 'Renovation', 'General Contracting'
+  { label: 'Water Damage', path: '/services/water-damage' },
+  { label: 'Fire Damage', path: '/services/fire-damage' },
+  { label: 'Mould Remediation', path: '/services/mould-remediation' },
+  { label: 'Structural Drying', path: '/services/structural-drying' },
+  { label: 'Storm Damage', path: '/services/storm-damage' },
+  { label: 'Sewage Cleanup', path: '/services/sewage-cleanup' },
+  { label: 'Repairs & Renovation', path: '/services/repairs-renovation' },
+  { label: 'General Contracting', path: '/services/general-contracting' },
 ]
 
 const company = [
-    'About Arctiv', 'Commercial Services', 'Insurance Claims',
-    'Service Areas', 'Projects', 'Careers', 'Contact', 'Resource Blog',
+    { label: 'About Arctiv', path: '/about' },
+    { label: 'Commercial Services', path: '/commercial-services' },
+    { label: 'Insurance Claims', path: '/insurance-claims' },
+    { label: 'Service Areas', path: '/#service-areas' },
+    { label: 'Projects', path: '/projects' },
+    { label: 'Careers', path: '/careers' },
+    { label: 'Contact', path: '/contact' },
+    { label: 'Resource Blog', path: '/blog' },
 ]
 
 export default function Footer() {
@@ -94,15 +107,19 @@ export default function Footer() {
                                 Services
                             </p>
                             <ul className="space-y-1">
-                                {services.map(s => (
-                                    <li key={s}>
-                                        <a
-                                            href="#"
-                                            className="text-gray-400 text-xs hover:text-white transition-colors duration-150"
-                                        >
-                                            {s}
-                                        </a>
-                                    </li>
+                            {services.map(({ label, path }) => (
+                                <li key={label}>
+                                    <a
+                                    href={path}
+                                    onClick={(e) => {
+                                        e.preventDefault()
+                                        navigate(path)
+                                    }}
+                                    className="text-gray-400 text-xs hover:text-white transition-colors duration-150"
+                                    >
+                                    {label}
+                                    </a>
+                                </li>
                                 ))}
                             </ul>
                         </div>
@@ -113,13 +130,17 @@ export default function Footer() {
                                 Company
                             </p>
                             <ul className="space-y-1">
-                                {company.map(c => (
-                                    <li key={c}>
+                                {company.map(({ label, path }) => (
+                                    <li key={label}>
                                         <a
-                                            href="#"
+                                            href={path}
+                                            onClick={(e) => {
+                                                e.preventDefault()
+                                                navigate(path)
+                                            }}
                                             className="text-gray-400 text-xs hover:text-white transition-colors duration-150"
                                         >
-                                            {c}
+                                            {label}
                                         </a>
                                     </li>
                                 ))}
