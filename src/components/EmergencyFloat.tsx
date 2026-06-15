@@ -3,7 +3,7 @@ import { Phone } from 'lucide-react'
 export function EmergencyFloat() {
   return (
     <a
-      href="tel:4168888888"
+      href="tel:+14374762407"
       className="fixed bottom-6 right-6 z-40 flex items-center justify-center w-14 h-14 bg-copper-500 hover:bg-copper-400 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
       aria-label="Emergency phone"
     >

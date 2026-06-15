@@ -169,7 +169,7 @@ export function Footer() {
               <li>
                 <a href="tel:4168888888" className="flex items-center gap-3 text-slate-300 text-xs hover:text-white transition-colors duration-150">
                   <PhoneIcon />
-                  (416) 888-8888
+                  +1 (437) 476 2407
                 </a>
               </li>
               <li>
@@ -180,7 +180,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3 text-slate-300 text-xs">
                 <LocationIcon />
-                Greater Toronto Area, Ontario
+                50 Steeles Avenue East, Milton, ON L9T 4W9, Canada.
               </li>
               <li className="flex items-center gap-3 text-slate-300 text-xs">
                 <ClockIcon />

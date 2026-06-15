@@ -48,11 +48,11 @@ export function EmergencyCTASection() {
           {/* CTAs */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
             <a
-              href="tel:4168888888"
+              href="tel:+14374762407"
               className="inline-flex items-center gap-2 bg-copper-500 hover:bg-copper-400 text-white px-8 py-4 rounded-lg text-sm font-semibold transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               <Phone className="w-5 h-5" />
-              Call (416) 888-8888
+              Call +1 (437) 476 2407
             </a>
             <a
               href="/contact"

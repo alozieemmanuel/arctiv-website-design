@@ -61,7 +61,7 @@ export function ContactPage() {
       })
       setSubmitted(true)
     } catch {
-      setError('Something went wrong. Please call us directly at (416) 888-8888.')
+      setError('Something went wrong. Please call us directly at +1 (437) 476 2407.')
     } finally {
       setLoading(false)
     }
@@ -105,7 +105,7 @@ export function ContactPage() {
                 className="inline-flex items-center gap-2 bg-copper-500 hover:bg-copper-400 text-white px-5 py-2.5 rounded-lg text-xs font-semibold transition-all duration-200"
               >
                 <Phone className="w-3.5 h-3.5" />
-                Call: (416) 888-8888
+                Call: +1 (437) 476 2407
               </a>
               <a
                 href="mailto:contact@arctiv.ca"
@@ -145,7 +145,7 @@ export function ContactPage() {
                       <h3 className="text-navy-900 font-semibold text-base mb-2">Message received</h3>
                       <p className="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto">
                         Thanks, {formData.name.split(' ')[0]}. We'll be in touch shortly. For emergencies, call{' '}
-                        <a href="tel:4168888888" className="text-copper-500 font-medium">(416) 888-8888</a> now.
+                        <a href="tel:+14374762407" className="text-copper-500 font-medium">+1 (437) 476 2407</a> now.
                       </p>
                       <button
                         onClick={() => {
@@ -304,7 +304,7 @@ export function ContactPage() {
 
                       <p className="text-slate-400 text-[10px] text-center">
                         For emergencies, always call{' '}
-                        <a href="tel:4168888888" className="text-copper-500 font-medium">(416) 888-8888</a> directly.
+                        <a href="tel:+14374762407" className="text-copper-500 font-medium">+1 (437) 476 2407</a> directly.
                       </p>
                     </form>
                   )}
@@ -319,9 +319,9 @@ export function ContactPage() {
                 <h2 className="text-base font-semibold text-navy-900 mb-4 tracking-tight">Contact info</h2>
                 <div className="space-y-2.5">
                   {[
-                    { icon: Phone, label: 'Phone', value: '(416) 888-8888', sub: '24/7 Emergency Line', href: 'tel:4168888888' },
+                    { icon: Phone, label: 'Phone', value: '+1 (437) 476 2407', sub: '24/7 Emergency Line', href: 'tel:+14374762407' },
                     { icon: Mail, label: 'Email', value: 'contact@arctiv.ca', sub: 'Replies within 4 hours', href: 'mailto:contact@arctiv.ca' },
-                    { icon: MapPin, label: 'Service Area', value: 'Greater Toronto Area', sub: 'Ontario, Canada', href: undefined },
+                    { icon: MapPin, label: 'Office Address', value: '50 Steeles Avenue East, Milton, ON L9T 4W9, Canada.', href: undefined },
                     { icon: Clock, label: 'Hours', value: '24/7 Emergency', sub: 'Mon–Fri 8am–6pm for quotes', href: undefined },
                   ].map((item) => (
                     <div key={item.label} className="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-slate-200">
@@ -361,7 +361,7 @@ export function ContactPage() {
                   href="tel:4168888888"
                   className="block w-full text-center bg-copper-500 hover:bg-copper-400 text-white font-semibold py-3 rounded-lg text-sm transition-all duration-200"
                 >
-                  Call (416) 888-8888
+                  Call +1 (437) 476 2407
                 </a>
               </div>
             </ScrollReveal>

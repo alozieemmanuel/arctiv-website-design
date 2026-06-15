@@ -196,7 +196,7 @@ export function Navbar() {
                 }`}
               >
                 <Phone className="w-3.5 h-3.5" />
-                (416) 888-8888
+                +1 (437) 476 2407
               </a>
               <a
                 href="/contact"

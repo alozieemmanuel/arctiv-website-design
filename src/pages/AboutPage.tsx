@@ -139,7 +139,7 @@ export function AboutPage() {
         <div className="container-custom ">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <ScrollReveal>
-              <div className="relative order-2 lg:order-1">
+              <div className="relative order-2 md:order-1">
                 <div className="rounded-xl overflow-hidden shadow-xl">
                   <img
                     src="/project-6.jpg"
@@ -152,7 +152,7 @@ export function AboutPage() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <div className="order-1 lg:order-2">
+              <div className="order-1 md:order-2">
                 <SectionLabel text="What We Handle" />
                 <h2 className="text-2xl lg:text-3xl font-semibold text-navy-900 tracking-tight mb-4">
                   Full-spectrum restoration services.
@@ -212,8 +212,8 @@ export function AboutPage() {
                   <div className="w-10 h-10 rounded-xl bg-copper-500/10 border border-copper-500/20 flex items-center justify-center mb-4">
                     <p.icon className="w-4 h-4 text-copper-500" />
                   </div>
-                  <h3 className="text-base font-semibold text-navy-900 mb-2">{p.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">{p.body}</p>
+                  <h3 className="text-sm font-semibold text-navy-900 mb-2">{p.title}</h3>
+                  <p className="text-slate-500 text-xs leading-relaxed">{p.body}</p>
                 </motion.div>
               </StaggerItem>
             ))}
@@ -254,7 +254,7 @@ export function AboutPage() {
                 href="tel:4168888888"
                 className="hidden px-7 py-3 rounded-lg text-sm font-semibold text-white border border-white/30 hover:bg-white/10 transition-all duration-200"
               >
-                Call (416) 888-8888
+                Call +1 (437) 476 2407
               </a>
             </div>
           </ScrollReveal>
