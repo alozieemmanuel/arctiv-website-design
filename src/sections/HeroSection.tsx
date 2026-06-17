@@ -15,7 +15,6 @@ export function HeroSection() {
         loop
         muted
         playsInline
-        poster="/project-1.jpg"
       />
 
       {/* Overlay */}

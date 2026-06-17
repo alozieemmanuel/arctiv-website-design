@@ -31,7 +31,7 @@ const serviceAreas = [
 ]
 
 // ── Replace this with your deployed Apps Script URL ──────────────────────────
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec'
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby2_BL2jovHArAR77WrHErdVs0EQGU_2rFiM6uAjcBnY3gXWTYmMCyZq5ppOD3qDsWN/exec'
 
 export function ContactPage() {
   const [formData, setFormData] = useState({
