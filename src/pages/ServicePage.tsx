@@ -34,7 +34,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
             transition={{ duration: 0.2 }}
             className="overflow-hidden"
           >
-            <p className="text-slate-500 text-sm leading-relaxed pb-4 px-10">{a}</p>
+            <p className="text-slate-500 text-sm leading-relaxed pb-4 pr-10">{a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -96,11 +96,11 @@ export function ServicePage({ slug }: { slug: string }) {
               </p>
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="tel:4168888888"
+                  href="tel:+14374762407"
                   className="hidden inline-flex items-center gap-2 bg-copper-500 hover:bg-copper-400 text-white px-6 py-3 rounded-lg text-xs font-semibold transition-all duration-200"
                 >
                   <Phone className="w-3.5 h-3.5" />
-                  Call (416) 888-8888
+                  Call +1 437 476 2407
                 </a>
                 <a
                   href="/contact"
@@ -171,7 +171,7 @@ export function ServicePage({ slug }: { slug: string }) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
               {data.process.map((p, i) => (
                 <StaggerItem key={i}>
-                  <div className="relative p-5 rounded-xl bg-white border border-slate-200">
+                  <div className="relative p-5 rounded-xl bg-white border border-slate-200 h-full">
                     <div className="w-9 h-9 rounded-full bg-copper-500 flex items-center justify-center text-white text-xs font-bold mb-4">
                       {String(i + 1).padStart(2, '0')}
                     </div>
@@ -275,10 +275,10 @@ export function ServicePage({ slug }: { slug: string }) {
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <a
-                href="tel:4168888888"
+                href="tel:+14374762407"
                 className="inline-flex items-center gap-2 bg-copper-500 hover:bg-copper-400 text-white font-semibold px-7 py-3 rounded-lg text-xs transition-all duration-200"
               >
-                Call (416) 888-8888
+                Call +1 437 476 2407
               </a>
               <a
                 href="/contact"

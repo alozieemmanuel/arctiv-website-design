@@ -10,7 +10,7 @@ import { navigate } from '@/lib/utils'
 const pillars = [
   {
     title: 'Rapid Response',
-    body: 'When disaster strikes, time is everything. We mobilize immediately — because the difference between manageable damage and total loss is often measured in hours.',
+    body: 'When disaster strikes, time is everything. We mobilize immediately because the difference between manageable damage and total loss is often measured in hours.',
     icon: Clock,
   },
   {
@@ -25,7 +25,7 @@ const pillars = [
   },
   {
     title: 'Complete Ownership',
-    body: 'From first call to final walkthrough, one team handles everything. No subcontracting surprises, no handoffs, no gaps in communication or quality.',
+    body: 'From first call to final walkthrough, one team handles everything. No surprises, no handoffs, no gaps in communication or quality.',
     icon: Star,
   },
 ]
@@ -33,7 +33,7 @@ const pillars = [
 const capabilities = [
   'Water damage & structural drying',
   'Fire & smoke restoration',
-  'Mould remediation & prevention',
+  'Mould & Asbestos remediation',
   'Storm & sewage damage',
   'Full reconstruction & renovation',
   'Commercial & residential properties',
@@ -158,9 +158,8 @@ export function AboutPage() {
                   Full-spectrum restoration services.
                 </h2>
                 <p className="text-slate-600 text-sm leading-relaxed mb-7">
-                  Arctiv brings every restoration discipline in-house. That means consistent quality,
-                  single-point accountability, and no delays waiting for a third party to show up.
-                  When your property is at risk, fragmented service is not an option.
+                Whether you're dealing with water damage, fire loss, mould remediation, or a full property rebuild, our team has the expertise and resources to manage the entire process. We deliver reliable restoration and renovation solutions that protect your property, minimize disruption, and restore peace of mind.
+
                 </p>
                 <ul className="space-y-2.5 mb-7">
                   {capabilities.map((item, i) => (

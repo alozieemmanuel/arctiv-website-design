@@ -167,7 +167,7 @@ export function Footer() {
             </p>
             <ul className="space-y-3 mb-6">
               <li>
-                <a href="tel:4168888888" className="flex items-center gap-3 text-slate-300 text-xs hover:text-white transition-colors duration-150">
+                <a href="tel:+14374762407" className="flex items-center gap-3 text-slate-300 text-xs hover:text-white transition-colors duration-150">
                   <PhoneIcon />
                   +1 (437) 476 2407
                 </a>
@@ -188,7 +188,7 @@ export function Footer() {
               </li>
             </ul>
             <a
-              href="tel:4168888888"
+              href="tel:+14374762407"
               className="block w-full text-center bg-copper-500 hover:bg-copper-400 text-white font-semibold py-3 rounded-xl text-sm transition-colors duration-200"
             >
               Emergency Line
@@ -202,7 +202,7 @@ export function Footer() {
       <div className="border-t border-white/[0.06]">
         <div className="container-custom py-5 md:px-20 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-slate-500 text-xs">
-            &copy; 2026 Arctiv Restoration Inc. All rights reserved.
+            &copy; 2026 Arctiv Services Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-xs text-slate-500">
             <a href="#" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
