@@ -62,7 +62,7 @@ const steps: Step[] = [
   {
     number: '04',
     title: 'Clearance',
-    description: 'We conduct final inspections, obtain clearance testing where required, and hand back your property — fully restored.',
+    description: 'We conduct final inspections, obtain clearance testing where required, and hand back your property fully restored.',
     icon: <ClearIcon />,
   },
 ]

@@ -66,7 +66,7 @@ export function AboutPage() {
               <span className="text-slate-400">when it matters most.</span>
             </h1>
             <p className="text-slate-300 text-xs lg:text-base max-w-lg mb-7 leading-relaxed">
-              Arctiv was founded in Canada with one purpose: to be the team property owners can depend on
+              Arctiv was founded with one purpose: to be the team property owners can depend on
               when things go wrong. Whether it's a flooded basement at 2 AM or a fire that shuts down
               a business, we respond fast, work with precision, and stay until the job is done properly.
             </p>
@@ -76,7 +76,7 @@ export function AboutPage() {
                 onClick={(e) => { e.preventDefault(); navigate('/contact'); window.scrollTo(0, 0) }}
                 className="bg-copper-500 hover:bg-copper-400 text-white px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-200"
               >
-                Get a Free Assessment
+                Request an Assessment
               </a>
               <a
                 href="/services/water-damage"
@@ -107,7 +107,7 @@ export function AboutPage() {
                 <p className="text-slate-600 text-sm leading-relaxed mb-4">
                   From our earliest days responding to water damage calls across the GTA, we've grown
                   into a full-service restoration company handling everything from emergency board-ups
-                  to complete rebuilds. But our core mission hasn't changed — restore properties,
+                  to complete rebuilds. But our core mission has not changed, we restore properties,
                   rebuild trust, and be there when it matters most.
                 </p>
                 <p className="text-slate-600 text-sm leading-relaxed">

@@ -77,7 +77,7 @@ export function HeroSection() {
             }}
             className="bg-copper-500 hover:bg-copper-400 text-white px-8 py-3.5 rounded-lg text-xs mb-5 font-semibold transition-all duration-200 shadow-md hover:shadow-lg uppercase tracking-wide"
           >
-            Get a Free Quote
+            Request an Assessment
           </a>
           <a
             href="#services"

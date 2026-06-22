@@ -100,14 +100,14 @@ export function ServicePage({ slug }: { slug: string }) {
                   className="hidden inline-flex items-center gap-2 bg-copper-500 hover:bg-copper-400 text-white px-6 py-3 rounded-lg text-xs font-semibold transition-all duration-200"
                 >
                   <Phone className="w-3.5 h-3.5" />
-                  Call +1 437 476 2407
+                  Call +1 (437) 476 2407
                 </a>
                 <a
                   href="/contact"
                   onClick={(e) => { e.preventDefault(); navigate('/contact'); window.scrollTo(0, 0) }}
                   className="inline-flex items-center gap-2 text-white text-xs font-medium px-6 py-3 rounded-lg border border-white/20 hover:bg-white/10 transition-all duration-200"
                 >
-                  Get a Free Quote
+                  Request an Assessment
                 </a>
               </div>
             </div>
@@ -278,14 +278,14 @@ export function ServicePage({ slug }: { slug: string }) {
                 href="tel:+14374762407"
                 className="inline-flex items-center gap-2 bg-copper-500 hover:bg-copper-400 text-white font-semibold px-7 py-3 rounded-lg text-xs transition-all duration-200"
               >
-                Call +1 437 476 2407
+                Call +1 (437) 476 2407
               </a>
               <a
                 href="/contact"
                 onClick={(e) => { e.preventDefault(); navigate('/contact'); window.scrollTo(0, 0) }}
                 className="hidden inline-flex items-center gap-2 text-white font-medium px-7 py-3 rounded-lg border border-white/20 hover:bg-white/10 text-xs transition-all duration-200"
               >
-                Request a Free Quote
+                Request an Assessment
               </a>
             </div>
           </ScrollReveal>

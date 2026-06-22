@@ -329,11 +329,11 @@ export function ProjectsPage() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a
-                href="tel:4168888888"
+                href="tel:+14374762407"
                 className="hidden inline-flex items-center gap-2 bg-copper-500 hover:bg-copper-400 text-white px-7 py-3 rounded-lg text-xs font-semibold transition-all duration-200"
               >
                 <Phone className="w-3.5 h-3.5" />
-                Call (416) 888-8888
+                Call +1 (437) 476 2407
               </a>
               <a
                 href="/contact"

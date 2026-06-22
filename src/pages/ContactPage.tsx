@@ -358,7 +358,7 @@ export function ContactPage() {
                   Call us immediately. Every minute matters when water, fire, or sewage is active in your property.
                 </p>
                 <a
-                  href="tel:4168888888"
+                  href="tel:+14374762407"
                   className="block w-full text-center bg-copper-500 hover:bg-copper-400 text-white font-semibold py-3 rounded-lg text-sm transition-all duration-200"
                 >
                   Call +1 (437) 476 2407

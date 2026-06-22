@@ -283,7 +283,7 @@ export function ProjectsSection() {
               }}
               className="bg-copper-500 hover:bg-copper-400 text-white px-6 py-2.5 rounded-lg text-sm font-medium transition-colors duration-200"
             >
-              Get a Free Quote
+              Request an Assessment
             </a>
             <a
               href="/projects"

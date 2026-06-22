@@ -190,7 +190,7 @@ export function Navbar() {
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-5">
               <a
-                href="tel:4168888888"
+                href="tel:+14374762407"
                 className={`flex items-center gap-2 text-[13px] font-medium transition-colors duration-200 ${
                   isScrolled ? 'text-slate-600 hover:text-slate-900' : 'text-white/80 hover:text-white'
                 }`}
@@ -203,7 +203,7 @@ export function Navbar() {
                 onClick={(e) => handleNav(e, '/contact')}
                 className="bg-copper-500 hover:bg-copper-400 text-white px-5 py-2.5 rounded-lg text-[13px] font-semibold transition-all duration-200 shadow-sm hover:shadow-[0_0_0_3px_rgba(180,100,30,0.18)]"
               >
-                Get a Free Quote
+                Request an Assessment
               </a>
             </div>
 
@@ -293,18 +293,18 @@ export function Navbar() {
 
               <div className="mt-8 space-y-3">
                 <a
-                  href="tel:4168888888"
+                  href="tel:+14374762407"
                   className="flex items-center justify-center gap-2.5 py-3 px-6 rounded-xl border border-slate-200 text-slate-800 text-[14px] font-medium"
                 >
                   <Phone className="w-4 h-4 text-copper-500" />
-                  (416) 888-8888
+                  +1 (437) 476 2407
                 </a>
                 <a
                   href="/contact"
                   onClick={(e) => handleNav(e, '/contact')}
                   className="flex items-center justify-center w-full bg-copper-500 hover:bg-copper-400 text-white py-3.5 px-6 rounded-xl text-[14px] font-semibold transition-colors duration-200"
                 >
-                  Get a Free Quote
+                  Request an Assessment
                 </a>
               </div>
             </div>

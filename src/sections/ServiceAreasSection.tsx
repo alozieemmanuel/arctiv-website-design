@@ -126,7 +126,7 @@ export function ServiceAreasSection() {
           </h2>
           <p className="text-slate-500 text-sm max-w-2xl mx-auto">
             Arctiv is based in the GTA and currently serves the following communities.
-            We're expanding — if your city isn't listed, reach out and we'll let you know.
+            We're expanding. If your city isn't listed, reach out and we'll let you know.
           </p>
         </ScrollReveal>
 
