@@ -202,7 +202,7 @@ function ServiceCard({ service }: { service: Service }) {
           <p className="text-slate-500 text-xs leading-relaxed mb-4">{service.description}</p>
 
           {/* Details */}
-          <div className="border-t border-slate-100 pt-4">
+          {/* <div className="border-t border-slate-100 pt-4">
             <ul className="space-y-1.5">
               {service.details.map((detail, i) => (
                 <li key={i} className="flex items-center gap-2 text-xs text-slate-500">
@@ -211,7 +211,7 @@ function ServiceCard({ service }: { service: Service }) {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
         </div>
       </a>
     </motion.div>

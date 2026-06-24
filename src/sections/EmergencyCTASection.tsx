@@ -62,7 +62,7 @@ export function EmergencyCTASection() {
                 window.dispatchEvent(new PopStateEvent('popstate'))
                 window.scrollTo(0, 0)
               }}
-              className="hidden inline-flex items-center gap-2 px-8 py-4 rounded-lg text-sm font-semibold text-white border border-white/30 hover:bg-white/10 transition-all duration-200"
+              className="hidden lg:inline-flex items-center gap-2 px-8 py-4 rounded-lg text-sm font-semibold text-white border border-white/30 hover:bg-white/10 transition-all duration-200"
             >
               Request Emergency Response
             </a>

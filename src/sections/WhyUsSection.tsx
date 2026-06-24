@@ -47,11 +47,10 @@ export function WhyUsSection() {
               Restoring properties to{' '}
               <span className="text-copper-400">better than before.</span>
             </h2>
-            <p className="text-slate-300 text-sm leading-relaxed mb-8">
+            <p className="text-slate-300 text-sm leading-relaxed mb-5">
               At Arctiv, we believe restoration should do more than repair damage. Our goal
               is to leave your property better than before, backed by certified expertise and
-              quality workmanship. From emergency response to complete restorations, we provide
-              clear communication, skilled workmanship, and lasting results. We handle the
+              quality workmanship. From emergency response to complete restorations, we handle the
               complexity so you can focus on moving forward.
             </p>
 
@@ -91,20 +90,6 @@ export function WhyUsSection() {
                 className="bg-copper-500 hover:bg-copper-400 text-white px-7 py-3 rounded-lg text-sm font-medium transition-colors duration-200"
               >
                 Request an Assessment
-              </a>
-              <a
-                href="/about"
-                onClick={(e) => {
-                  e.preventDefault()
-                  navigate('/about')
-                  window.scrollTo(0, 0)
-                }}
-                className="hidden text-copper-400 hover:text-copper-300 text-sm font-medium flex items-center gap-2 hover:gap-3 transition-all duration-200"
-              >
-                Our Services
-                <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
               </a>
             </div>
           </div>

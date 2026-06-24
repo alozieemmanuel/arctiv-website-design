@@ -292,7 +292,7 @@ export function ProjectsSection() {
                 navigate('/projects')
                 window.scrollTo(0, 0)
               }}
-              className="hidden text-sm font-medium px-6 py-2.5 rounded-lg transition-all duration-200"
+              className="hidden lg:inline-flex text-sm font-medium px-6 py-2.5 rounded-lg transition-all duration-200"
               style={{
                 background: 'rgba(11,31,58,0.04)',
                 color: 'rgba(11,31,58,0.6)',

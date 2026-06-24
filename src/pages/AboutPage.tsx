@@ -15,7 +15,7 @@ const pillars = [
   },
   {
     title: 'Certified Expertise',
-    body: 'Our technicians carry IICRC certifications and follow Health Canada guidelines. Every job is handled by professionals who know the standards inside out.',
+    body: 'Our technicians are professionally trained and certified, following industry best practices and Health Canada guidelines.',
     icon: Shield,
   },
   {
@@ -66,9 +66,7 @@ export function AboutPage() {
               <span className="text-slate-400">when it matters most.</span>
             </h1>
             <p className="text-slate-300 text-xs lg:text-base max-w-lg mb-7 leading-relaxed">
-              Arctiv was founded with one purpose: to be the team property owners can depend on
-              when things go wrong. Whether it's a flooded basement at 2 AM or a fire that shuts down
-              a business, we respond fast, work with precision, and stay until the job is done properly.
+            Arctiv was founded to be the team property owners can trust when disaster strikes. Whether it's water damage, fire restoration, or a major renovation, our experienced team responds quickly, works with precision, and treats every property as if it were our own.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
@@ -100,11 +98,7 @@ export function AboutPage() {
                 <h2 className="text-2xl lg:text-3xl font-semibold text-navy-900 tracking-tight mb-5">
                   One team. Every type of property damage.
                 </h2>
-                <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                  Arctiv was built on a simple belief: when disaster strikes your property, you deserve
-                  a team that responds with speed, expertise, and genuine care. We are that team.
-                </p>
-                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                <p className="text-slate-600 text-sm leading-relaxed mb-2">
                   From our earliest days responding to water damage calls across the GTA, we've grown
                   into a full-service restoration company handling everything from emergency board-ups
                   to complete rebuilds. But our core mission has not changed, we restore properties,
@@ -157,9 +151,8 @@ export function AboutPage() {
                 <h2 className="text-2xl lg:text-3xl font-semibold text-navy-900 tracking-tight mb-4">
                   Full-spectrum restoration services.
                 </h2>
-                <p className="text-slate-600 text-sm leading-relaxed mb-7">
-                Whether you're dealing with water damage, fire loss, mould remediation, or a full property rebuild, our team has the expertise and resources to manage the entire process. We deliver reliable restoration and renovation solutions that protect your property, minimize disruption, and restore peace of mind.
-
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                  Whether you're dealing with water damage, fire loss, mould remediation, or a full property rebuild, our team has the expertise and resources to manage the entire process. 
                 </p>
                 <ul className="space-y-2.5 mb-7">
                   {capabilities.map((item, i) => (
@@ -238,8 +231,7 @@ export function AboutPage() {
               No damage is too complex.
             </h2>
             <p className="text-slate-400 text-xs lg:text-base mb-7 max-w-lg mx-auto leading-relaxed">
-              Whether you're dealing with an emergency right now or planning a renovation,
-              Arctiv is the team you want on your side. The first assessment is always on us.
+            Whether you're dealing with an emergency right now or planning a renovation, Arctiv is the team you want on your side. Trusted expertise. Reliable solutions. Exceptional results.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a
@@ -247,10 +239,10 @@ export function AboutPage() {
                 onClick={(e) => { e.preventDefault(); navigate('/contact'); window.scrollTo(0, 0) }}
                 className="bg-copper-500 hover:bg-copper-400 text-white px-7 py-3 rounded-lg text-sm font-semibold transition-all duration-200"
               >
-                Get a Free Quote
+                Request an Assessment
               </a>
               <a
-                href="tel:4168888888"
+                href="tel:+14374762407"
                 className="hidden px-7 py-3 rounded-lg text-sm font-semibold text-white border border-white/30 hover:bg-white/10 transition-all duration-200"
               >
                 Call +1 (437) 476 2407

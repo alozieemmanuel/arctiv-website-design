@@ -96,8 +96,8 @@ export function ContactPage() {
               <span className="text-slate-400">your property.</span>
             </h1>
             <p className="text-slate-300 text-xs lg:text-base max-w-lg leading-relaxed mb-6">
-              Whether you have an active emergency, need a free quote, or just want to understand
-              your options — reach out and we'll respond the same day.
+              Whether you have an active emergency, need an assessment, or just want to understand
+              your options, reach out and we'll respond the same day.
             </p>
             <div className="flex flex-wrap gap-3">
               <a

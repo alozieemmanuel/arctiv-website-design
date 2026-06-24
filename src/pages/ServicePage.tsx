@@ -97,7 +97,7 @@ export function ServicePage({ slug }: { slug: string }) {
               <div className="flex flex-wrap gap-3">
                 <a
                   href="tel:+14374762407"
-                  className="hidden inline-flex items-center gap-2 bg-copper-500 hover:bg-copper-400 text-white px-6 py-3 rounded-lg text-xs font-semibold transition-all duration-200"
+                  className="hidden lg:inline-flex items-center gap-2 bg-copper-500 hover:bg-copper-400 text-white px-6 py-3 rounded-lg text-xs font-semibold transition-all duration-200"
                 >
                   <Phone className="w-3.5 h-3.5" />
                   Call +1 (437) 476 2407
@@ -271,7 +271,7 @@ export function ServicePage({ slug }: { slug: string }) {
               Dealing with {data.badge}?
             </h2>
             <p className="text-slate-400 text-sm mb-7 max-w-lg mx-auto leading-relaxed">
-              Don't wait — the longer you leave it, the worse it gets. Call Arctiv now or request a free quote and we'll respond fast.
+              Don't wait. The longer you leave it, the worse it gets. Call Arctiv now or request an assessment and we'll respond fast.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <a
@@ -283,7 +283,7 @@ export function ServicePage({ slug }: { slug: string }) {
               <a
                 href="/contact"
                 onClick={(e) => { e.preventDefault(); navigate('/contact'); window.scrollTo(0, 0) }}
-                className="hidden inline-flex items-center gap-2 text-white font-medium px-7 py-3 rounded-lg border border-white/20 hover:bg-white/10 text-xs transition-all duration-200"
+                className="hidden lg:inline-flex items-center gap-2 text-white font-medium px-7 py-3 rounded-lg border border-white/20 hover:bg-white/10 text-xs transition-all duration-200"
               >
                 Request an Assessment
               </a>

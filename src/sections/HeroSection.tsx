@@ -75,7 +75,7 @@ export function HeroSection() {
               navigate('/contact')
               window.scrollTo(0, 0)
             }}
-            className="bg-copper-500 hover:bg-copper-400 text-white px-8 py-3.5 rounded-lg text-xs mb-5 font-semibold transition-all duration-200 shadow-md hover:shadow-lg uppercase tracking-wide"
+            className="bg-copper-500 hover:bg-copper-400 text-white px-8 py-3.5 rounded-lg text-xs mb-5 font-semibold transition-all duration-200 shadow-md hover:shadow-lg tracking-wide"
           >
             Request an Assessment
           </a>
@@ -85,7 +85,7 @@ export function HeroSection() {
               e.preventDefault()
               document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })
             }}
-            className="hidden px-8 py-3.5 rounded-lg text-xs font-semibold text-white border border-white/30 hover:bg-white/10 transition-all duration-200"
+            className="hidden lg:inline-flex mb-5 px-8 py-3.5 rounded-lg text-xs font-semibold text-white border border-white/30 hover:bg-white/10 transition-all duration-200"
           >
             Our Services
           </a>
