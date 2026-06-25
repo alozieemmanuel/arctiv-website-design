@@ -6,134 +6,13 @@ import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { EmergencyFloat } from '@/components/EmergencyFloat'
 import { navigate } from '@/lib/utils'
+import { projects, catColors, type ProjectData, type ProjectCategory } from '@/data/projectsData'
 
-type Category = 'All' | 'Water Damage' | 'Fire & Smoke' | 'Mould' | 'Reconstruction' | 'General Contracting'
-
-interface Project {
-  id: string
-  title: string
-  category: Category
-  location: string
-  scope: string
-  duration: string
-  description: string
-  tags: string[]
-  image: string
-}
-
-const projects: Project[] = [
-  {
-    id: 'p1',
-    title: 'Basement Flood Restoration',
-    category: 'Water Damage',
-    location: 'Mississauga, ON',
-    scope: 'Full basement',
-    duration: '8 days',
-    description: 'A burst supply line flooded a finished basement with 4 inches of standing water. Arctiv extracted over 3,000 litres, removed affected drywall and flooring, and dried the space to IICRC S500 standards before rebuilding all finishes.',
-    tags: ['Water Extraction', 'Structural Drying', 'Rebuild'],
-    image: '/project-1.jpg',
-  },
-  {
-    id: 'p2',
-    title: 'Kitchen Fire Restoration',
-    category: 'Fire & Smoke',
-    location: 'Toronto, ON',
-    scope: 'Kitchen + adjacent rooms',
-    duration: '3 weeks',
-    description: 'A grease fire caused significant smoke and soot damage throughout the main floor. Arctiv secured the property, completed full smoke cleaning and odour remediation, and rebuilt the kitchen with new cabinetry, countertops, and flooring.',
-    tags: ['Smoke Cleaning', 'Odour Removal', 'Kitchen Rebuild'],
-    image: '/project-6.jpg',
-  },
-  {
-    id: 'p3',
-    title: 'Attic Mould Remediation',
-    category: 'Mould',
-    location: 'Brampton, ON',
-    scope: 'Attic — 1,400 sq ft',
-    duration: '5 days',
-    description: 'Inadequate attic ventilation led to extensive mould colonization across the sheathing. Arctiv established containment, performed full HEPA removal, applied antimicrobial treatment, and provided clearance testing documentation.',
-    tags: ['Containment', 'HEPA Removal', 'Clearance Testing'],
-    image: '/project-4.jpg',
-  },
-  {
-    id: 'p4',
-    title: 'Storm Damage Roof Restoration',
-    category: 'Reconstruction',
-    location: 'Vaughan, ON',
-    scope: 'Roof + two interior rooms',
-    duration: '2 weeks',
-    description: 'A severe windstorm removed a section of roofing, allowing rain to penetrate and damage two second-floor bedrooms. Arctiv tarped immediately, extracted water, dried the structure, and replaced roofing, drywall, insulation, and flooring.',
-    tags: ['Emergency Tarping', 'Water Damage', 'Roof Repair'],
-    image: '/about-team.png',
-  },
-  {
-    id: 'p5',
-    title: 'Commercial Water Damage — Office Suite',
-    category: 'Water Damage',
-    location: 'Etobicoke, ON',
-    scope: '2,800 sq ft office',
-    duration: '10 days',
-    description: 'A sprinkler malfunction flooded a commercial office suite over a long weekend. Arctiv responded after-hours, extracted water, dried the space around tenant operations where possible, and restored flooring, ceilings, and partitions.',
-    tags: ['Commercial', 'After-Hours Response', 'Office Restoration'],
-    image: '/project-5.jpg',
-  },
-  {
-    id: 'p6',
-    title: 'Full Basement Suite Renovation',
-    category: 'General Contracting',
-    location: 'North York, ON',
-    scope: 'Full basement',
-    duration: '5 weeks',
-    description: 'A homeowner engaged Arctiv to convert an unfinished basement into a legal secondary suite. Scope included framing, insulation, drywall, egress windows, a new bathroom, kitchen rough-in, flooring, and all finishes.',
-    tags: ['Renovation', 'Secondary Suite', 'Full Scope'],
-    image: '/project-2.jpg',
-  },
-  {
-    id: 'p7',
-    title: 'Sewage Backup — Main Floor Restoration',
-    category: 'Water Damage',
-    location: 'Scarborough, ON',
-    scope: '1,200 sq ft',
-    duration: '12 days',
-    description: 'A municipal sewer surcharge caused a category 3 sewage backup affecting the entire main floor. Arctiv completed biohazard extraction, full sanitization, removal of all affected porous materials, and rebuilt drywall, flooring, and cabinetry.',
-    tags: ['Biohazard', 'Sewage Cleanup', 'Full Rebuild'],
-    image: '/project-1.jpg',
-  },
-  {
-    id: 'p8',
-    title: 'Commercial Kitchen Build-Out',
-    category: 'General Contracting',
-    location: 'Markham, ON',
-    scope: 'Commercial kitchen',
-    duration: '6 weeks',
-    description: 'Arctiv managed a full commercial kitchen build-out for a food service tenant, coordinating mechanical, electrical, plumbing rough-in, tile, stainless millwork, and hood installation to meet health department standards.',
-    tags: ['Commercial', 'Multi-Trade', 'Kitchen'],
-    image: '/project-6.jpg',
-  },
-  {
-    id: 'p9',
-    title: 'Post-Fire Structural Rebuild',
-    category: 'Fire & Smoke',
-    location: 'Richmond Hill, ON',
-    scope: 'Upper floor',
-    duration: '6 weeks',
-    description: 'A bedroom fire caused structural damage to joists and roof sheathing on the upper floor. Arctiv handled emergency board-up, contents pack-out, full structural repairs, and complete interior rebuild from framing to finishes.',
-    tags: ['Structural Repair', 'Contents Pack-Out', 'Full Rebuild'],
-    image: '/project-2.jpg',
-  },
-]
+type Category = 'All' | ProjectCategory
 
 const CATEGORIES: Category[] = ['All', 'Water Damage', 'Fire & Smoke', 'Mould', 'Reconstruction', 'General Contracting']
 
-const catColors: Record<string, { dot: string; text: string; badge: string }> = {
-  'Water Damage':        { dot: '#3b82f6', text: '#3b82f6', badge: 'bg-blue-50 text-blue-700' },
-  'Fire & Smoke':        { dot: '#f97316', text: '#f97316', badge: 'bg-orange-50 text-orange-700' },
-  'Mould':               { dot: '#22c55e', text: '#22c55e', badge: 'bg-green-50 text-green-700' },
-  'Reconstruction':      { dot: '#b87333', text: '#b87333', badge: 'bg-copper-200 text-copper-600' },
-  'General Contracting': { dot: '#a855f7', text: '#a855f7', badge: 'bg-purple-50 text-purple-700' },
-}
-
-function ProjectCard({ project, index }: { project: Project; index: number }) {
+function ProjectCard({ project, index }: { project: ProjectData; index: number }) {
   const [visible, setVisible] = useState(false)
   const [hovered, setHovered] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
@@ -149,6 +28,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
   const colors = catColors[project.category] ?? catColors['Reconstruction']
 
+  function handleClick() {
+    navigate(`/projects/${project.slug}`)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <div
       ref={ref}
@@ -159,14 +43,19 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       }}
     >
       <div
-        className="group relative rounded-2xl overflow-hidden border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all duration-300 h-full flex flex-col"
+        className="group relative rounded-2xl overflow-hidden border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all duration-300 h-full flex flex-col cursor-pointer"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
+        onClick={handleClick}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleClick() }}
+        aria-label={`View project: ${project.title}`}
       >
         {/* Image */}
         <div className="relative overflow-hidden" style={{ height: '200px' }}>
           <img
-            src={project.image}
+            src={project.coverImage}
             alt={project.title}
             className="w-full h-full object-cover"
             style={{
@@ -182,14 +71,38 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             }}
           />
           {/* Category badge */}
-          <span className={`absolute bottom-3 left-3 px-2.5 py-0.5 rounded-full text-xs font-medium ${colors.badge}`}>
+          <span
+            className="absolute bottom-3 left-3 px-2.5 py-0.5 rounded-full text-xs font-medium"
+            style={{
+              background: colors.light,
+              color: colors.text,
+              border: `1px solid ${colors.dot}33`,
+            }}
+          >
             {project.category}
+          </span>
+
+          {/* View arrow — appears on hover */}
+          <span
+            className="absolute bottom-3 right-3 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300"
+            style={{
+              background: hovered ? 'rgba(199,123,48,0.9)' : 'rgba(255,255,255,0.15)',
+              opacity: hovered ? 1 : 0,
+              transform: hovered ? 'scale(1) translateX(0)' : 'scale(0.8) translateX(4px)',
+            }}
+          >
+            <svg viewBox="0 0 12 12" fill="none" className="w-3 h-3">
+              <path d="M2 6h8M6 2l4 4-4 4" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </span>
         </div>
 
         {/* Content */}
         <div className="p-4 flex flex-col flex-1 bg-white">
-          <h3 className="text-sm font-semibold text-navy-900 mb-1.5 group-hover:text-copper-500 transition-colors" style={{ letterSpacing: '-0.01em' }}>
+          <h3
+            className="text-sm font-semibold text-navy-900 mb-1.5 group-hover:text-copper-500 transition-colors"
+            style={{ letterSpacing: '-0.01em' }}
+          >
             {project.title}
           </h3>
 
@@ -268,7 +181,7 @@ export function ProjectsPage() {
 
       {/* Filter + Grid */}
       <section className="bg-white py-16 lg:py-20 px-3 md:px-10">
-        <div className="container-custom ">
+        <div className="container-custom">
 
           {/* Filter pills */}
           <div
@@ -340,7 +253,7 @@ export function ProjectsPage() {
                 onClick={(e) => { e.preventDefault(); navigate('/contact'); window.scrollTo(0, 0) }}
                 className="inline-flex items-center gap-2 px-7 py-3 rounded-lg text-xs font-semibold text-white border border-white/30 hover:bg-white/10 transition-all duration-200"
               >
-                Request a Free Quote
+                Request an Assessment
               </a>
             </div>
           </ScrollReveal>

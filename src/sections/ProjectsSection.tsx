@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { SectionLabel } from '@/components/SectionLabel'
 import { navigate } from '@/lib/utils'
 
-type Category = 'All' | 'Water Damage' | 'Fire & Smoke' | 'Mould' | 'Renovation'
+type Category = 'All' | 'Water Damage' | 'Fire & Smoke' | 'Mould' | 'Renovation' | 'Repairs & Renovation' | 'Sewage Cleanup'
 
 interface Project {
   id: string
@@ -16,27 +16,27 @@ interface Project {
 const projects: Project[] = [
   {
     id: 'p1',
-    title: 'Flooded Basement Recovery',
+    title: 'Flooded Garage Recovery',
     location: 'Mississauga, ON',
     category: 'Water Damage',
-    type: 'Residential',
-    image: '/project-1.jpg',
+    type: 'Commercial',
+    image: '/wd-project-6.jpeg',
   },
   {
     id: 'p2',
-    title: 'Post-Fire Suite Restoration',
+    title: 'Bathroom Full Restoration',
     location: 'Toronto, ON',
-    category: 'Fire & Smoke',
+    category: 'Repairs & Renovation',
     type: 'Residential',
-    image: '/project-2.jpg',
+    image: '/rr-project-2.jpeg',
   },
   {
     id: 'p3',
-    title: 'Commercial Lobby Rebuild',
+    title: 'Post-Fire Residential Restoration',
     location: 'Brampton, ON',
-    category: 'Renovation',
-    type: 'Commercial',
-    image: '/project-3.jpg',
+    category: 'Fire & Smoke',
+    type: 'Residential',
+    image: '/fr-project-5.png',
   },
   {
     id: 'p4',
@@ -48,11 +48,11 @@ const projects: Project[] = [
   },
   {
     id: 'p5',
-    title: 'High-Rise Water Intrusion',
+    title: 'Sewage Backup Recovery',
     location: 'Etobicoke, ON',
-    category: 'Water Damage',
-    type: 'Commercial',
-    image: '/project-5.jpg',
+    category: 'Sewage Cleanup',
+    type: 'Residential',
+    image: '/sw-project-9.jpeg',
   },
   {
     id: 'p6',
@@ -79,6 +79,15 @@ const ArrowIcon = () => (
   </svg>
 )
 
+const projectSlugs: Record<string, string> = {
+  'p1': 'flooded-garage-recovery',
+  'p2': 'bathroom-full-restoration',
+  'p3': 'commercial-lobby-rebuild',
+  'p4': 'mould-remediation-crawl-space',
+  'p5': 'sewage-backup-restoration',
+  'p6': 'kitchen-fire-full-rebuild',
+}
+
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const [visible, setVisible] = useState(false)
   const [hovered, setHovered] = useState(false)
@@ -104,11 +113,15 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         transition: `opacity 550ms ease ${index * 90}ms, transform 550ms ease ${index * 90}ms`,
       }}
     >
-      <div
-        className="group relative rounded-2xl overflow-hidden cursor-pointer border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all duration-300"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-      >
+        <div
+          className="group relative rounded-2xl overflow-hidden cursor-pointer border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          onClick={() => {                                    
+            navigate(`/projects/${projectSlugs[project.id]}`) 
+            window.scrollTo({ top: 0, behavior: 'smooth' })    
+          }}                                                    
+        >
         {/* Image */}
         <div className="relative overflow-hidden" style={{ height: '240px' }}>
           <img

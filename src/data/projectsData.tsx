@@ -4,6 +4,8 @@ export type ProjectCategory =
   | 'Mould'
   | 'Reconstruction'
   | 'General Contracting'
+  | 'Repair & Renovation'
+  | 'Sewage Cleanup'
 
 export interface ProjectData {
   id: string
@@ -15,77 +17,77 @@ export interface ProjectData {
   duration: string
   type: 'Residential' | 'Commercial'
   description: string
-  detail: string // longer paragraph for the detail page
+  detail: string 
   challenge: string
   outcome: string
   tags: string[]
   coverImage: string
-  gallery: string[] // array of image paths
+  gallery: string[] 
 }
 
 export const projects: ProjectData[] = [
   {
     id: 'p1',
-    slug: 'flooded-basement-recovery',
-    title: 'Flooded Basement Recovery',
+    slug: 'flooded-garage-recovery',
+    title: 'Flooded Parking Garage Recovery',
     category: 'Water Damage',
     location: 'Mississauga, ON',
     scope: 'Full basement — 1,100 sq ft',
     duration: '8 days',
-    type: 'Residential',
+    type: 'Commercial',
     description:
       'A burst supply line flooded a finished basement with 4 inches of standing water. Arctiv extracted over 3,000 litres, removed affected drywall and flooring, and dried the space to IICRC S500 standards before rebuilding all finishes.',
     detail:
-      'The homeowner discovered the flood on a Sunday morning. By the time Arctiv arrived, standing water had reached the base of the electrical panel. Our team isolated power, deployed truck-mounted extraction units, and had the space clear within six hours. Structural drying ran for five days with continuous moisture mapping to confirm wall cavities and subfloor were within acceptable limits before any rebuilding began.',
+      'A parking garage was flooded after heavy rainfall overwhelmed the drainage system. Arctiv responded immediately, removed standing water with industrial extraction equipment, and began structural drying to protect the concrete, electrical systems, and surrounding areas.',
     challenge:
-      'Water had migrated under a floating laminate floor into the subfloor OSB, creating a hidden reservoir that standard surface extraction would have missed. Thermal imaging identified the extent before any drywall was cut.',
+      'Floodwater collected in low points and around support columns, creating hidden moisture that could damage concrete coatings and electrical components if left untreated.',
     outcome:
-      'Full rebuild completed on day 8 — drywall, insulation, luxury vinyl plank, and painted finishes. Moisture readings signed off by a certified IICRC technician. Insurance claim handled end-to-end.',
-    tags: ['Water Extraction', 'Structural Drying', 'Rebuild', 'Insurance'],
-    coverImage: '/project-5.jpg',
-    gallery: ['/project-1.jpg', '/project-5.jpg', '/project-3.jpg', '/project-4.jpg'],
+      'The garage was fully dried, moisture levels verified, and the space safely reopened with minimal disruption. Complete documentation was provided to support the insurance process.',
+    tags: ['Water Extraction', 'Structural Drying', 'Commercial', 'Insurance'],
+    coverImage: '/wd-project-6.jpeg',
+    gallery: ['/wd-project-6.jpeg', '/wd-project-12.jpeg', '/wd-project-8.jpeg', '/wd-project-11.jpeg', '/wd-project-1.jpeg'],
   },
   {
     id: 'p2',
-    slug: 'post-fire-suite-restoration',
-    title: 'Post-Fire Suite Restoration',
-    category: 'Fire & Smoke',
+    slug: 'bathroom-full-restoration',
+    title: 'Bathroom Full Restoration',
+    category: 'Repair & Renovation',
     location: 'Toronto, ON',
-    scope: 'Kitchen + adjacent rooms',
+    scope: 'Full Bathroom Renovation',
     duration: '3 weeks',
     type: 'Residential',
     description:
-      'A grease fire caused significant smoke and soot damage throughout the main floor. Arctiv secured the property, completed full smoke cleaning and odour remediation, and rebuilt the kitchen with new cabinetry, countertops, and flooring.',
+      'An outdated bathroom was transformed into a modern, functional space with new fixtures, custom tiling, waterproofing, and premium finishes. Arctiv managed the project from demolition to final installation, delivering a bathroom built for comfort and lasting performance.',
     detail:
-      'The fire originated at the range hood and spread soot through the HVAC system, coating every surface in the open-plan main floor. Arctiv secured the property with board-up overnight, then began a systematic cleaning sequence: HEPA vacuuming of all surfaces, dry-chemical sponging of walls and ceilings, duct cleaning, and ozone treatment for odour. The kitchen rebuild was scoped jointly with the insurer\'s adjuster to restore like-for-like finishes.',
+      'The existing bathroom had aging fixtures, worn finishes, and water-damaged materials that required a complete renovation. Our team handled demolition, waterproofing, plumbing updates, new tile installation, and fixture replacement to create a clean, modern bathroom with quality craftsmanship throughout.',
     challenge:
-      'Smoke had penetrated the HVAC returns and distributed fine particulate to the second floor. The scope expanded mid-project to include upstairs bedroom cleaning — all absorbed within the original timeline.',
+      'The renovation uncovered hidden moisture damage behind the shower walls, requiring repairs before new waterproofing and finishes could be installed.',
     outcome:
-      'Full occupancy restored in 21 days. Air quality testing confirmed particulate levels within Health Canada guidelines. The family relocated to a hotel for only 12 of those days.',
-    tags: ['Smoke Cleaning', 'Odour Removal', 'Kitchen Rebuild', 'HVAC'],
-    coverImage: '/project-2.jpg',
-    gallery: ['/project-2.jpg', '/project-6.jpg', '/project-1.jpg', '/project-3.jpg'],
+      'The bathroom was fully restored with updated plumbing, modern fixtures, premium tile finishes, and a waterproof system designed for long-term durability and everyday comfort.',
+    tags: ['Renovation', 'Bathroom Rebuild', 'Waterproofing', 'Residential'],
+    coverImage: '/rr-project-2.jpeg',
+    gallery: ['/rr-project-2.jpeg', '/rr-project-1.jpeg', '/rr-project-3.jpeg', '/rr-project-4.jpeg', '/rr-project-5.jpeg'],
   },
   {
     id: 'p3',
-    slug: 'commercial-lobby-rebuild',
-    title: 'Commercial Lobby Rebuild',
-    category: 'Reconstruction',
+    slug: 'post-fire-residential-restoration',
+    title: 'Post-Fire Residential Restoration',
+    category: 'Fire & Smoke',
     location: 'Brampton, ON',
-    scope: 'Commercial lobby — 2,200 sq ft',
-    duration: '4 weeks',
-    type: 'Commercial',
+    scope: '2-Storey Residential Home',
+    duration: '2 weeks',
+    type: 'Residential',
     description:
-      'Storm damage compromised the curtain wall of a commercial building, allowing water infiltration that destroyed flooring, millwork, and the reception area. Arctiv coordinated emergency waterproofing, drying, and a full lobby rebuild while the building stayed partially operational.',
+      'A residential fire left extensive smoke, soot, and heat damage throughout the home\'s upper level. Our team completed emergency mitigation, smoke remediation, structural repairs, and a full interior restoration, returning the property to a clean, safe, and move-in ready condition.',
     detail:
-      'A severe ice storm cracked a section of the curtain wall, and meltwater infiltrated over several days before the building manager noticed. By then, the polished concrete subfloor had heaved, the reception millwork was saturated, and suspended ceiling tiles across 2,200 sq ft had collapsed. Arctiv phased the work so tenants on upper floors retained access throughout.',
+      'A residential fire caused heavy smoke and soot damage throughout the second floor, affecting walls, ceilings, bathrooms, bedrooms, and common areas. Following emergency mitigation, our team removed damaged materials, completed deep smoke cleaning, rebuilt affected spaces, and restored the home with new finishes and fixtures.',
     challenge:
-      'The curtain wall repair required a glazing subcontractor with lift access during business hours. Arctiv coordinated three trades simultaneously — glazing, drywall, and flooring — on a compressed schedule to avoid a second business quarter of disruption.',
+      'Smoke and soot had spread well beyond the fire source, requiring careful cleaning, deodorization, and selective reconstruction while preserving unaffected structural elements.',
     outcome:
-      'Lobby reopened ahead of schedule. New polished concrete pour, custom millwork, updated lighting, and a refreshed reception ceiling delivered to the property manager\'s spec.',
-    tags: ['Commercial', 'Storm Damage', 'Multi-Trade', 'Lobby Rebuild'],
-    coverImage: '/project-3.jpg',
-    gallery: ['/project-3.jpg', '/project-5.jpg', '/project-2.jpg', '/project-6.jpg'],
+      'The home was fully restored with new drywall, flooring, trim, paint, doors, and a renovated bathroom. After final cleaning and inspection, the property was returned to the homeowners in safe, move-in ready condition.',
+    tags: ['Residential', 'Fire & Soot Damage', 'Multi-Trade', 'Lobby Rebuild'],
+    coverImage: '/fr-project-3.png',
+    gallery: ['/fr-project-3.png', '/fr-project-2.png', '/fr-project-5.png', '/fr-project-4.png', '/fr-project-6.png', '/fr-project-7.png', '/fr-project-8.png'],
   },
   {
     id: 'p4',
@@ -110,30 +112,30 @@ export const projects: ProjectData[] = [
   },
   {
     id: 'p5',
-    slug: 'high-rise-water-intrusion',
-    title: 'High-Rise Water Intrusion',
-    category: 'Water Damage',
+    slug: 'sewage-backup-restoration',
+    title: 'Sewage Backup Restortation',
+    category: 'Sewage Cleanup',
     location: 'Etobicoke, ON',
-    scope: '2,800 sq ft office',
+    scope: 'Single-Family Home',
     duration: '10 days',
     type: 'Commercial',
     description:
-      'A sprinkler malfunction flooded a commercial office suite over a long weekend. Arctiv responded after-hours, extracted water, dried the space around tenant operations where possible, and restored flooring, ceilings, and partitions.',
+      'A sewage backup flooded the lower level of a residential property, leaving contaminated water across multiple rooms. Arctiv responded quickly to extract the water, sanitize the affected areas, and begin the restoration process to return the home to a safe condition.',
     detail:
-      'The call came in at 11 PM on a Friday. A faulty sprinkler head had discharged for approximately four hours before the building\'s monitoring system flagged it. Arctiv mobilized within 90 minutes, worked through the night to extract standing water and protect server room equipment, and had drying equipment staged before the Monday morning staff arrived.',
+      'A sewer backup released contaminated water into the basement and hallway, affecting tiled floors and nearby finishes. Our team contained the affected areas, extracted the wastewater, completed sanitization, and began structural drying to prevent further damage.',
     challenge:
-      'The tenant refused to vacate entirely. Arctiv built temporary poly barriers to isolate wet zones, running drying equipment on a rolling schedule that preserved two-thirds of the office floor for active use throughout the 10-day restoration.',
+      'Contaminated water had spread through connected rooms, requiring careful containment and thorough disinfection to prevent cross-contamination.',
     outcome:
-      'No data loss, no missed business days for the tenant. Full flooring, ceiling, and partition restoration completed within the insurance policy\'s scope.',
+      'The affected areas were fully cleaned, sanitized, and dried to acceptable moisture levels. The home was safely prepared for repairs, and complete documentation was provided for the insurance claim.',
     tags: ['Commercial', 'After-Hours Response', 'Office Restoration', 'Insurance'],
-    coverImage: '/project-5.jpg',
-    gallery: ['/project-5.jpg', '/project-3.jpg', '/project-1.jpg', '/project-2.jpg'],
+    coverImage: '/sw-project-11.jpeg',
+    gallery: ['/sw-project-11.jpeg', '/sw-project-5.jpeg', '/sw-project-2.jpeg', '/sw-project-9.jpeg', '/sw-project-7.jpeg'],
   },
   {
     id: 'p6',
     slug: 'kitchen-fire-full-rebuild',
     title: 'Kitchen Fire — Full Rebuild',
-    category: 'Fire & Smoke',
+    category: 'Reconstruction',
     location: 'Oakville, ON',
     scope: 'Kitchen + dining area',
     duration: '3 weeks',
@@ -148,7 +150,49 @@ export const projects: ProjectData[] = [
       'Kitchen delivered with upgraded countertop and backsplash within the original insurance allowance. The family described it as the kitchen they always wanted.',
     tags: ['Fire Damage', 'Smoke Cleaning', 'Kitchen Rebuild', 'Cabinetry'],
     coverImage: '/project-6.jpg',
-    gallery: ['/project-6.jpg', '/project-2.jpg', '/project-4.jpg', '/project-5.jpg'],
+    gallery: ['/project-6.jpg', '/kt-project-1.jpeg', '/kt-project-2.jpeg', ],
+  },
+  {
+    id: 'p7',
+    slug: 'gcustom-residential-home-construction',
+    title: 'Custom Residential Home Construction',
+    category: 'Reconstruction',
+    location: 'Oakville, ON',
+    scope: 'Residential Home',
+    duration: '2 months',
+    type: 'Residential',
+    description:
+      'From planning to framing, Arctiv coordinated the construction of a custom residential home, managing trade schedules, structural framing, and quality inspections to keep the project on track for the next phase of construction.',
+    detail:
+      'Construction began with site preparation, structural framing, and coordinated trade scheduling. Our team managed the project through the framing stage, ensuring the structure was built to plan, inspected, and ready for roofing, mechanical, electrical, and interior work.',
+    challenge:
+      'Keeping multiple trades on schedule while maintaining construction quality and meeting inspection requirements at every stage.',
+    outcome:
+      'The framing phase was completed on schedule, passed structural inspections, and was ready for the next stage of construction without delays.',
+    tags: ['Fire Damage', 'Smoke Cleaning', 'Kitchen Rebuild', 'Cabinetry'],
+    coverImage: '/gc-project-2.jpeg',
+    gallery: ['/gc-project-2.jpeg', '/gc-project-3.jpeg', '/gc-project-5.jpeg', '/gc-project-6.jpeg', '/gc-project-4.jpeg', '/gc-project-1.jpeg'],
+  },
+  {
+    id: 'p8',
+    slug: 'condo-lobby-unit-restoration',
+    title: 'Condo Lobby & Unit Restoration',
+    category: 'Reconstruction',
+    location: 'Oakville, ON',
+    scope: 'Residential Home',
+    duration: '2 months',
+    type: 'Residential',
+    description:
+      'From planning to framing, Arctiv coordinated the construction of a custom residential home, managing trade schedules, structural framing, and quality inspections to keep the project on track for the next phase of construction.',
+    detail:
+      'Construction began with site preparation, structural framing, and coordinated trade scheduling. Our team managed the project through the framing stage, ensuring the structure was built to plan, inspected, and ready for roofing, mechanical, electrical, and interior work.',
+    challenge:
+      'Keeping multiple trades on schedule while maintaining construction quality and meeting inspection requirements at every stage.',
+    outcome:
+      'The framing phase was completed on schedule, passed structural inspections, and was ready for the next stage of construction without delays.',
+    tags: ['Fire Damage', 'Smoke Cleaning', 'Kitchen Rebuild', 'Cabinetry'],
+    coverImage: '/gc-project-2.jpeg',
+    gallery: ['/gc-project-2.jpeg', '/gc-project-3.jpeg', '/gc-project-5.jpeg', '/gc-project-6.jpeg', '/gc-project-4.jpeg', '/gc-project-1.jpeg'],
   },
 ]
 

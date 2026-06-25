@@ -38,7 +38,6 @@ function Lightbox({
       style={{ background: 'rgba(11,31,58,0.95)', backdropFilter: 'blur(8px)' }}
       onClick={onClose}
     >
-      {/* Close */}
       <button
         className="absolute top-5 right-5 text-white/60 hover:text-white transition-colors"
         onClick={onClose}
@@ -49,7 +48,6 @@ function Lightbox({
         </svg>
       </button>
 
-      {/* Prev */}
       <button
         className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-all"
         onClick={(e) => { e.stopPropagation(); onPrev() }}
@@ -58,7 +56,6 @@ function Lightbox({
         <ChevronLeft className="w-5 h-5" />
       </button>
 
-      {/* Image */}
       <div
         className="relative max-w-5xl w-full mx-16"
         onClick={(e) => e.stopPropagation()}
@@ -73,7 +70,6 @@ function Lightbox({
         </p>
       </div>
 
-      {/* Next */}
       <button
         className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-all"
         onClick={(e) => { e.stopPropagation(); onNext() }}
@@ -85,84 +81,196 @@ function Lightbox({
   )
 }
 
+// ─── Mobile slider ────────────────────────────────────────────────────────────
+function MobileSlider({
+  images,
+  onOpen,
+}: {
+  images: string[]
+  onOpen: (i: number) => void
+}) {
+  const [current, setCurrent] = useState(0)
+  const startXRef = useRef<number | null>(null)
+
+  const go = (i: number) => setCurrent(Math.max(0, Math.min(i, images.length - 1)))
+
+  const onTouchStart = (e: React.TouchEvent) => { startXRef.current = e.touches[0].clientX }
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (startXRef.current === null) return
+    const dx = e.changedTouches[0].clientX - startXRef.current
+    if (Math.abs(dx) > 40) go(current + (dx < 0 ? 1 : -1))
+    startXRef.current = null
+  }
+
+  return (
+    <div className="relative overflow-hidden rounded-2xl mb-6" style={{ height: '280px' }}>
+      {/* Track */}
+      <div
+        className="flex h-full"
+        style={{
+          transform: `translateX(-${current * (100 / images.length)}%)`,
+          transition: 'transform 380ms cubic-bezier(0.4, 0, 0.2, 1)',
+          width: `${images.length * 100}%`,
+        }}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
+        {images.map((img, i) => (
+          <div
+            key={i}
+            className="relative flex-shrink-0 cursor-zoom-in"
+            style={{ width: `${100 / images.length}%`, height: '100%' }}
+            onClick={() => onOpen(i)}
+          >
+            <img src={img} alt={`Project image ${i + 1}`} className="w-full h-full object-cover" />
+          </div>
+        ))}
+      </div>
+
+      {/* Prev arrow */}
+      {current > 0 && (
+        <button
+          className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center"
+          style={{ background: 'rgba(11,31,58,0.6)', backdropFilter: 'blur(6px)' }}
+          onClick={() => go(current - 1)}
+          aria-label="Previous"
+        >
+          <ChevronLeft className="w-4 h-4 text-white" />
+        </button>
+      )}
+
+      {/* Next arrow */}
+      {current < images.length - 1 && (
+        <button
+          className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center"
+          style={{ background: 'rgba(11,31,58,0.6)', backdropFilter: 'blur(6px)' }}
+          onClick={() => go(current + 1)}
+          aria-label="Next"
+        >
+          <ChevronRight className="w-4 h-4 text-white" />
+        </button>
+      )}
+
+      {/* Dot indicators */}
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => go(i)}
+            aria-label={`Go to image ${i + 1}`}
+            style={{
+              width: i === current ? '18px' : '6px',
+              height: '6px',
+              borderRadius: '999px',
+              background: i === current ? '#C77B30' : 'rgba(255,255,255,0.5)',
+              transition: 'width 250ms ease, background 250ms ease',
+              padding: 0,
+              border: 'none',
+              cursor: 'pointer',
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Counter pill */}
+      <div
+        className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[11px] font-medium text-white"
+        style={{ background: 'rgba(11,31,58,0.6)', backdropFilter: 'blur(6px)' }}
+      >
+        {current + 1} / {images.length}
+      </div>
+    </div>
+  )
+}
+
 // ─── Gallery grid ─────────────────────────────────────────────────────────────
 function GalleryGrid({ images }: { images: string[] }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 1024)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
 
   const open = (i: number) => setLightboxIndex(i)
   const close = () => setLightboxIndex(null)
   const prev = () => setLightboxIndex((i) => (i === null ? 0 : (i - 1 + images.length) % images.length))
   const next = () => setLightboxIndex((i) => (i === null ? 0 : (i + 1) % images.length))
 
-  // Layout: first image large, rest in a row
   const [main, ...rest] = images
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 mb-3">
-        {/* Main image */}
-        <div
-          className="relative overflow-hidden rounded-2xl cursor-zoom-in group"
-          style={{ height: '400px' }}
-          onClick={() => open(0)}
-        >
-          <img
-            src={main}
-            alt="Project main"
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-          />
+      {/* Mobile: swipe slider */}
+      {isMobile ? (
+        <MobileSlider images={images} onOpen={open} />
+      ) : (
+        /* Desktop: main + 2×2 grid */
+        <div className="grid grid-cols-2 gap-3 mb-3">
+          {/* Main image */}
           <div
-            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-            style={{ background: 'rgba(11,31,58,0.35)' }}
+            className="relative overflow-hidden rounded-2xl cursor-zoom-in group"
+            style={{ height: '400px' }}
+            onClick={() => open(0)}
           >
+            <img
+              src={main}
+              alt="Project main"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
             <div
-              className="w-10 h-10 rounded-full flex items-center justify-center"
-              style={{ background: 'rgba(199,123,48,0.9)' }}
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+              style={{ background: 'rgba(11,31,58,0.35)' }}
             >
-              <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4">
-                <path d="M8 1v14M1 8h14" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-              </svg>
+              <div
+                className="w-10 h-10 rounded-full flex items-center justify-center"
+                style={{ background: 'rgba(199,123,48,0.9)' }}
+              >
+                <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4">
+                  <path d="M8 1v14M1 8h14" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Secondary images — stacked 2×2 on right */}
-        <div className="grid grid-cols-2 gap-3">
-          {rest.slice(0, 4).map((img, i) => {
-            const isLast = i === 3 && images.length > 4
-            return (
-              <div
-                key={i}
-                className="relative overflow-hidden rounded-xl cursor-zoom-in group"
-                style={{ height: '193px' }}
-                onClick={() => open(i + 1)}
-              >
-                <img
-                  src={img}
-                  alt={`Project image ${i + 2}`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                {isLast && (
-                  <div
-                    className="absolute inset-0 flex items-center justify-center rounded-xl"
-                    style={{ background: 'rgba(11,31,58,0.6)' }}
-                  >
-                    <span className="text-white font-semibold text-sm">
-                      +{images.length - 4} more
-                    </span>
-                  </div>
-                )}
-                {!isLast && (
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{ background: 'rgba(11,31,58,0.3)' }}
+          {/* Secondary images — 2×2 */}
+          <div className="grid grid-cols-2 gap-3">
+            {rest.slice(0, 4).map((img, i) => {
+              const isLast = i === 3 && images.length > 4
+              return (
+                <div
+                  key={i}
+                  className="relative overflow-hidden rounded-xl cursor-zoom-in group"
+                  style={{ height: '193px' }}
+                  onClick={() => open(i + 1)}
+                >
+                  <img
+                    src={img}
+                    alt={`Project image ${i + 2}`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                )}
-              </div>
-            )
-          })}
+                  {isLast ? (
+                    <div
+                      className="absolute inset-0 flex items-center justify-center rounded-xl"
+                      style={{ background: 'rgba(11,31,58,0.6)' }}
+                    >
+                      <span className="text-white font-semibold text-sm">+{images.length - 4} more</span>
+                    </div>
+                  ) : (
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{ background: 'rgba(11,31,58,0.3)' }}
+                    />
+                  )}
+                </div>
+              )
+            })}
+          </div>
         </div>
-      </div>
+      )}
 
       {lightboxIndex !== null && (
         <Lightbox
@@ -189,13 +297,18 @@ function StatPill({
 }) {
   return (
     <div
-      className="flex items-center gap-3 px-5 py-4 rounded-xl border border-slate-200"
+      className="flex items-center gap-4 px-5 py-5 rounded-xl border border-slate-200"
       style={{ background: 'rgba(11,31,58,0.02)' }}
     >
-      <span className="text-slate-400">{icon}</span>
+      <div
+        className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+        style={{ background: 'rgba(11,31,58,0.06)' }}
+      >
+        <span className="text-slate-500">{icon}</span>
+      </div>
       <div>
-        <p className="text-[11px] text-slate-400 uppercase tracking-wider leading-none mb-0.5">{label}</p>
-        <p className="text-sm font-semibold text-navy-900" style={{ letterSpacing: '-0.01em' }}>{value}</p>
+        <p className="text-[11px] text-slate-400 uppercase tracking-wider leading-none mb-1">{label}</p>
+        <p className="text-sm font-semibold text-navy-900 leading-snug" style={{ letterSpacing: '-0.01em' }}>{value}</p>
       </div>
     </div>
   )
@@ -296,14 +409,13 @@ export function ProjectDetailPage({ slug }: { slug: string }) {
 
       {/* ── Hero banner ── */}
       <section
-        className="relative overflow-hidden"
+        className="relative overflow-hidden pl-4 lg:pl-8"
         style={{
           background: 'linear-gradient(160deg, #0B1F3A 0%, #1a3a5c 60%, #0B1F3A 100%)',
           paddingTop: '7rem',
           paddingBottom: '3.5rem',
         }}
       >
-        {/* Subtle grid */}
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
           style={{
@@ -314,7 +426,6 @@ export function ProjectDetailPage({ slug }: { slug: string }) {
         />
 
         <div className="container-custom px-4 md:px-10 relative z-10">
-          {/* Back link */}
           <button
             onClick={() => { navigate('/projects'); window.scrollTo(0, 0) }}
             className="inline-flex items-center gap-2 text-slate-400 hover:text-white text-xs font-medium mb-8 transition-colors group"
@@ -331,7 +442,6 @@ export function ProjectDetailPage({ slug }: { slug: string }) {
               transition: 'opacity 700ms ease, transform 700ms ease',
             }}
           >
-            {/* Category badge */}
             <span
               className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full mb-4"
               style={{
@@ -359,7 +469,7 @@ export function ProjectDetailPage({ slug }: { slug: string }) {
       </section>
 
       {/* ── Content ── */}
-      <section className="bg-white py-14 lg:py-20 px-4 md:px-10">
+      <section className="bg-white py-10 lg:py-20 px-4 md:px-10">
         <div className="container-custom">
           <div className="grid lg:grid-cols-[1fr_300px] gap-12 items-start">
 
@@ -368,8 +478,8 @@ export function ProjectDetailPage({ slug }: { slug: string }) {
               {/* Gallery */}
               <GalleryGrid images={project.gallery} />
 
-              {/* Stat pills */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-8 mb-10">
+              {/* Stat pills — stacked on mobile, 3-col on md+ */}
+              <div className="flex flex-col sm:grid sm:grid-cols-3 gap-3 mt-2 mb-10">
                 <StatPill
                   icon={<MapPin className="w-4 h-4" />}
                   label="Location"
@@ -390,12 +500,12 @@ export function ProjectDetailPage({ slug }: { slug: string }) {
               {/* Narrative */}
               <ScrollReveal>
                 <h2
-                  className="text-lg font-semibold text-navy-900 mb-3"
+                  className="text-lg font-semibold text-navy-900 mb-3 pl-2"
                   style={{ letterSpacing: '-0.02em' }}
                 >
                   What happened
                 </h2>
-                <p className="text-slate-600 text-sm leading-relaxed mb-8">
+                <p className="text-slate-600 text-sm leading-relaxed mb-8 pl-2">
                   {project.detail}
                 </p>
               </ScrollReveal>
@@ -455,9 +565,7 @@ export function ProjectDetailPage({ slug }: { slug: string }) {
                   className="rounded-2xl border border-slate-200 p-6 mb-5"
                   style={{ background: 'rgba(11,31,58,0.02)' }}
                 >
-                  <p
-                    className="text-xs font-semibold text-navy-900 uppercase tracking-wider mb-4"
-                  >
+                  <p className="text-xs font-semibold text-navy-900 uppercase tracking-wider mb-4">
                     Services Involved
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -476,9 +584,7 @@ export function ProjectDetailPage({ slug }: { slug: string }) {
                 {/* CTA card */}
                 <div
                   className="rounded-2xl p-6 text-center"
-                  style={{
-                    background: 'linear-gradient(135deg, #0B1F3A 0%, #1a3a5c 100%)',
-                  }}
+                  style={{ background: 'linear-gradient(135deg, #0B1F3A 0%, #1a3a5c 100%)' }}
                 >
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -507,7 +613,7 @@ export function ProjectDetailPage({ slug }: { slug: string }) {
                     onMouseOver={(e) => (e.currentTarget.style.background = '#d4914d')}
                     onMouseOut={(e) => (e.currentTarget.style.background = '#C77B30')}
                   >
-                    Request a Free Assessment
+                    Request an Assessment
                   </a>
                   <a
                     href="tel:+14374762407"
@@ -570,9 +676,7 @@ export function ProjectDetailPage({ slug }: { slug: string }) {
       >
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse at 50% 50%, rgba(199,123,48,0.07) 0%, transparent 65%)',
-          }}
+          style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(199,123,48,0.07) 0%, transparent 65%)' }}
         />
         <div className="container-custom px-10 relative z-10 text-center">
           <ScrollReveal>
@@ -583,8 +687,7 @@ export function ProjectDetailPage({ slug }: { slug: string }) {
               Have a project in mind?
             </h2>
             <p className="text-slate-400 text-sm mb-7 max-w-lg mx-auto leading-relaxed">
-              Whether it's emergency restoration or a planned renovation, get in touch and we'll
-              respond the same day.
+              Whether it's emergency restoration or a planned renovation, get in touch and we'll respond the same day.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a
@@ -596,7 +699,7 @@ export function ProjectDetailPage({ slug }: { slug: string }) {
                 }}
                 className="inline-flex items-center gap-2 px-7 py-3 rounded-lg text-xs font-semibold text-white transition-all duration-200 border border-white/30 hover:bg-white/10"
               >
-                Request a Free Quote
+                Request an Assessment
               </a>
             </div>
           </ScrollReveal>
