@@ -4,7 +4,6 @@ export type ProjectCategory =
   | 'Mould'
   | 'Reconstruction'
   | 'General Contracting'
-  | 'Repair & Renovation'
   | 'Sewage Cleanup'
 
 export interface ProjectData {
@@ -51,7 +50,7 @@ export const projects: ProjectData[] = [
     id: 'p2',
     slug: 'bathroom-full-restoration',
     title: 'Bathroom Full Restoration',
-    category: 'Repair & Renovation',
+    category: 'Reconstruction',
     location: 'Toronto, ON',
     scope: 'Full Bathroom Renovation',
     duration: '3 weeks',
@@ -87,7 +86,7 @@ export const projects: ProjectData[] = [
       'The home was fully restored with new drywall, flooring, trim, paint, doors, and a renovated bathroom. After final cleaning and inspection, the property was returned to the homeowners in safe, move-in ready condition.',
     tags: ['Residential', 'Fire & Soot Damage', 'Multi-Trade', 'Lobby Rebuild'],
     coverImage: '/fr-project-3.png',
-    gallery: ['/fr-project-3.png', '/fr-project-2.png', '/fr-project-5.png', '/fr-project-4.png', '/fr-project-6.png', '/fr-project-7.png', '/fr-project-8.png'],
+    gallery: ['/fr-project-3.png', '/fr-project-2.png', '/fr-project-5.png', '/fr-project-9.png', '/fr-project-4.png', '/fr-project-6.png', '/fr-project-7.png', '/fr-project-8.png'],
   },
   {
     id: 'p4',
@@ -133,43 +132,43 @@ export const projects: ProjectData[] = [
   },
   {
     id: 'p6',
-    slug: 'kitchen-fire-full-rebuild',
-    title: 'Kitchen Fire — Full Rebuild',
+    slug: 'kitchen-renovation',
+    title: 'Kitchen Renovation',
     category: 'Reconstruction',
     location: 'Oakville, ON',
     scope: 'Kitchen + dining area',
-    duration: '3 weeks',
+    duration: '10 weeks',
     type: 'Residential',
     description:
-      'A grease fire destroyed the kitchen and spread soot to the dining area. Arctiv handled the full scope from emergency board-up through demolition, smoke remediation, and a complete kitchen rebuild with new cabinetry, countertops, appliances, and flooring.',
+      'The homeowners wanted a modern, functional kitchen that better suited their lifestyle. Arctiv managed the project from design through construction, delivering a custom kitchen and breakfast area renovation with thoughtful layout improvements and premium finishes.',
     detail:
-      'The fire reached the ceiling before suppression, charring three upper cabinets and melting range-adjacent appliances. Smoke spread through the open archway to the dining room. Arctiv\'s first priority was securing the exterior opening from the firefighters\' ventilation cut, then scoping the clean versus affected boundary before any demolition began.',
+      'The homeowners wanted to modernize their kitchen and breakfast area with improved functionality, updated finishes, and a more open layout. Arctiv handled the complete design and build process, including minor layout modifications, custom cabinetry, new countertops, flooring, lighting, and finishing details.',
     challenge:
-      'The homeowners had a strong preference for a specific cabinet line with a 6-week lead time. Arctiv coordinated the demolition and smoke cleaning schedule so that all prep work — framing, electrical rough-in, plumbing — was staged and ready the day the cabinets arrived, compressing the visible build phase to 5 days.',
+      'The renovation required careful coordination of structural adjustments, cabinetry, electrical, plumbing, and finish trades to deliver a seamless transformation within the planned schedule.',
     outcome:
-      'Kitchen delivered with upgraded countertop and backsplash within the original insurance allowance. The family described it as the kitchen they always wanted.',
-    tags: ['Fire Damage', 'Smoke Cleaning', 'Kitchen Rebuild', 'Cabinetry'],
+      'The project was completed within six weeks, delivering a fully customized kitchen and breakfast area with improved flow, modern finishes, and craftsmanship tailored to the homeowners\' vision.',
+    tags: ['Kitchen Rebuild', 'Project Management', 'Kitchen Rebuild', 'Cabinetry'],
     coverImage: '/project-6.jpg',
     gallery: ['/project-6.jpg', '/kt-project-1.jpeg', '/kt-project-2.jpeg', ],
   },
   {
     id: 'p7',
-    slug: 'gcustom-residential-home-construction',
-    title: 'Custom Residential Home Construction',
-    category: 'Reconstruction',
-    location: 'Oakville, ON',
+    slug: 'residential-home-construction',
+    title: 'Residential Home Construction',
+    category: 'General Contracting',
+    location: 'Markham, ON',
     scope: 'Residential Home',
-    duration: '2 months',
+    duration: '10 months',
     type: 'Residential',
     description:
-      'From planning to framing, Arctiv coordinated the construction of a custom residential home, managing trade schedules, structural framing, and quality inspections to keep the project on track for the next phase of construction.',
+      'From design planning and permit approvals to foundation work, framing, and final finishes, Arctiv coordinated every stage of this residential construction project, managing trades, inspections, and timelines through to completion.',
     detail:
       'Construction began with site preparation, structural framing, and coordinated trade scheduling. Our team managed the project through the framing stage, ensuring the structure was built to plan, inspected, and ready for roofing, mechanical, electrical, and interior work.',
     challenge:
       'Keeping multiple trades on schedule while maintaining construction quality and meeting inspection requirements at every stage.',
     outcome:
-      'The framing phase was completed on schedule, passed structural inspections, and was ready for the next stage of construction without delays.',
-    tags: ['Fire Damage', 'Smoke Cleaning', 'Kitchen Rebuild', 'Cabinetry'],
+      'The home was completed on schedule, passed all required municipal inspections, and was delivered ready for occupancy with quality workmanship throughout.',
+    tags: ['Reconstruction', 'Residential', 'General Contracting', 'Framing'],
     coverImage: '/gc-project-2.jpeg',
     gallery: ['/gc-project-2.jpeg', '/gc-project-3.jpeg', '/gc-project-5.jpeg', '/gc-project-6.jpeg', '/gc-project-4.jpeg', '/gc-project-1.jpeg'],
   },
@@ -178,21 +177,21 @@ export const projects: ProjectData[] = [
     slug: 'condo-lobby-unit-restoration',
     title: 'Condo Lobby & Unit Restoration',
     category: 'Reconstruction',
-    location: 'Oakville, ON',
-    scope: 'Residential Home',
-    duration: '2 months',
+    location: 'Toronto, ON',
+    scope: 'Condo Lobby + Multiple Units',
+    duration: '3 months',
     type: 'Residential',
     description:
-      'From planning to framing, Arctiv coordinated the construction of a custom residential home, managing trade schedules, structural framing, and quality inspections to keep the project on track for the next phase of construction.',
+      'Following water damage, Arctiv restored the condominium lobby and multiple residential units, delivering new finishes, refreshed common areas, and fully repaired interiors. Every space was completed to a clean, modern standard while coordinating closely with building management and residents.',
     detail:
-      'Construction began with site preparation, structural framing, and coordinated trade scheduling. Our team managed the project through the framing stage, ensuring the structure was built to plan, inspected, and ready for roofing, mechanical, electrical, and interior work.',
+      'Water damage affected several residential units and portions of the building\'s common areas. Arctiv managed the restoration from demolition through reconstruction, returning every space to its original condition.',
     challenge:
-      'Keeping multiple trades on schedule while maintaining construction quality and meeting inspection requirements at every stage.',
+      'Working throughout an occupied condominium required careful scheduling, controlled access to common areas, and phased construction so residents could continue using the building safely while restoration progressed.',
     outcome:
-      'The framing phase was completed on schedule, passed structural inspections, and was ready for the next stage of construction without delays.',
-    tags: ['Fire Damage', 'Smoke Cleaning', 'Kitchen Rebuild', 'Cabinetry'],
-    coverImage: '/gc-project-2.jpeg',
-    gallery: ['/gc-project-2.jpeg', '/gc-project-3.jpeg', '/gc-project-5.jpeg', '/gc-project-6.jpeg', '/gc-project-4.jpeg', '/gc-project-1.jpeg'],
+      'The lobby and affected units were fully restored with new finishes, flooring, and repairs, delivering a clean, modern result completed on schedule.',
+    tags: ['Water Damage Restoration', 'Renovation', 'Lobby Rebuild', 'Interior Painting'],
+    coverImage: '/cd-project-4.jpeg',
+    gallery: ['/cd-project-4.jpeg', '/cd-project-3.jpeg', '/cd-project-5.jpeg', '/cd-project-6.jpeg', '/cd-project-7.jpeg', '/cd-project-1.jpeg'],
   },
 ]
 
