@@ -44,13 +44,13 @@ const steps: Step[] = [
   {
     number: '01',
     title: 'Assessment',
-    description: 'We respond within an hour for an emergency service call, document the damage thoroughly, and provide a clear scope of work.',
+    description: 'We respond within an hour for an emergency service call, access and document the damage thoroughly, and provide a clear scope of work.',
     icon: <AssessIcon />,
   },
   {
     number: '02',
     title: 'Planning',
-    description: 'Our team builds a restoration plan, coordinates with your insurer, and establishes a realistic timeline.',
+    description: 'Our team builds a restoration plan, coordinates with you and your insurer, and establishes a realistic timeline.',
     icon: <PlanIcon />,
   },
   {

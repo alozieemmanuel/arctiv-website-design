@@ -5,6 +5,7 @@ export type ProjectCategory =
   | 'Reconstruction'
   | 'General Contracting'
   | 'Sewage Cleanup'
+  | 'Flooding'
 
 export interface ProjectData {
   id: string
@@ -29,40 +30,41 @@ export const projects: ProjectData[] = [
     id: 'p1',
     slug: 'flooded-garage-recovery',
     title: 'Flooded Parking Garage Recovery',
-    category: 'Water Damage',
-    location: 'Mississauga, ON',
-    scope: 'Full basement — 1,100 sq ft',
-    duration: '8 days',
+    category: 'Flooding',
+    location: 'Scarborough, ON',
+    scope: 'Over 10,000 sq ft',
+    duration: '10 days',
     type: 'Commercial',
     description:
-      'A burst supply line flooded a finished basement with 4 inches of standing water. Arctiv extracted over 3,000 litres, removed affected drywall and flooring, and dried the space to IICRC S500 standards before rebuilding all finishes.',
+      'A burst supply line flooded a parking garage with over 2 feet of standing water. Arctiv extracted over 50,000 gallons of water, safely disposed the contaminated water, cleaned, and dried the space to IICRC S500 standards.',
     detail:
-      'A parking garage was flooded after heavy rainfall overwhelmed the drainage system. Arctiv responded immediately, removed standing water with industrial extraction equipment, and began structural drying to protect the concrete, electrical systems, and surrounding areas.',
+      'A parking garage was flooded after city main pipe burst overwhelming the drainage system. Arctiv responded immediately, removed standing water with industrial extraction equipment, and began structural drying to protect the concrete, electrical systems, and surrounding areas.',
     challenge:
       'Floodwater collected in low points and around support columns, creating hidden moisture that could damage concrete coatings and electrical components if left untreated.',
     outcome:
       'The garage was fully dried, moisture levels verified, and the space safely reopened with minimal disruption. Complete documentation was provided to support the insurance process.',
-    tags: ['Water Extraction', 'Structural Drying', 'Commercial', 'Insurance'],
+    tags: ['Water Extraction', 'Structural Drying', 'Commercial', 'Insurance', 'Hydro-Vac System'],
     coverImage: '/wd-project-6.jpeg',
     gallery: ['/wd-project-6.jpeg', '/wd-project-12.jpeg', '/wd-project-8.jpeg', '/wd-project-11.jpeg', '/wd-project-1.jpeg'],
   },
   {
     id: 'p2',
-    slug: 'bathroom-full-restoration',
-    title: 'Bathroom Full Restoration',
-    category: 'Reconstruction',
+    slug: 'bathroom-restoration',
+    title: 'Bathroom Restoration',
+    category: 'Water Damage',
     location: 'Toronto, ON',
-    scope: 'Full Bathroom Renovation',
-    duration: '3 weeks',
+    scope: 'Bathroom Renovation',
+    duration: '2 weeks',
     type: 'Residential',
     description:
-      'An outdated bathroom was transformed into a modern, functional space with new fixtures, custom tiling, waterproofing, and premium finishes. Arctiv managed the project from demolition to final installation, delivering a bathroom built for comfort and lasting performance.',
+      'Water infiltration from leaking windows and a rooftop deck caused damage to the interior finishes of the bathroom. Arctiv identified the source, repaired the affected areas, and completed the restoration, returning the bathroom to a safe, dry, and well-finished condition.',
     detail:
-      'The existing bathroom had aging fixtures, worn finishes, and water-damaged materials that required a complete renovation. Our team handled demolition, waterproofing, plumbing updates, new tile installation, and fixture replacement to create a clean, modern bathroom with quality craftsmanship throughout.',
+      'Water infiltration from leaking windows and the rooftop deck caused moisture damage to the bathroom, affecting walls, ceilings, and interior finishes. Our team identified the source of the leak, completed the necessary building envelope repairs, and restored the bathroom with new finishes and improved waterproofing.',
     challenge:
-      'The renovation uncovered hidden moisture damage behind the shower walls, requiring repairs before new waterproofing and finishes could be installed.',
+      'Water infiltration had spread behind walls and finishes, requiring repairs to the building envelope and thorough moisture remediation before restoration could begin.',
     outcome:
-      'The bathroom was fully restored with updated plumbing, modern fixtures, premium tile finishes, and a waterproof system designed for long-term durability and everyday comfort.',
+      'The bathroom was fully restored to its full functionality. The building envelope\'s waterproofing and moisture protection system were improved to provide long-term durability.',
+
     tags: ['Renovation', 'Bathroom Rebuild', 'Waterproofing', 'Residential'],
     coverImage: '/rr-project-2.jpeg',
     gallery: ['/rr-project-2.jpeg', '/rr-project-1.jpeg', '/rr-project-3.jpeg', '/rr-project-4.jpeg', '/rr-project-5.jpeg'],
@@ -74,40 +76,40 @@ export const projects: ProjectData[] = [
     category: 'Fire & Smoke',
     location: 'Brampton, ON',
     scope: '2-Storey Residential Home',
-    duration: '2 weeks',
+    duration: '6 months',
     type: 'Residential',
     description:
-      'A residential fire left extensive smoke, soot, and heat damage throughout the home\'s upper level. Our team completed emergency mitigation, smoke remediation, structural repairs, and a full interior restoration, returning the property to a clean, safe, and move-in ready condition.',
+      'A residential fire left extensive smoke, soot, and heat damage throughout the home. Our team completed emergency mitigation, demolition, structural repairs, and a full interior restoration, according to engineer recommendation, returning the property to a clean, safe, and move-in ready condition.',
     detail:
-      'A residential fire caused heavy smoke and soot damage throughout the second floor, affecting walls, ceilings, bathrooms, bedrooms, and common areas. Following emergency mitigation, our team removed damaged materials, completed deep smoke cleaning, rebuilt affected spaces, and restored the home with new finishes and fixtures.',
+      'A residential home caught fire affecting all the building finishes throughout the home. Following emergency mitigation, our team removed damaged materials, completed deep smoke cleaning, rebuilt affected spaces, and restored the home with new finishes and fixtures.',
     challenge:
-      'Smoke and soot had spread well beyond the fire source, requiring careful cleaning, deodorization, and selective reconstruction while preserving unaffected structural elements.',
+      'Smoke and soot had spread well beyond the fire source, requiring careful cleaning, deodorization, and selective structural reconstruction while preserving unaffected structural elements.',
     outcome:
       'The home was fully restored with new drywall, flooring, trim, paint, doors, and a renovated bathroom. After final cleaning and inspection, the property was returned to the homeowners in safe, move-in ready condition.',
-    tags: ['Residential', 'Fire & Soot Damage', 'Multi-Trade', 'Lobby Rebuild'],
+    tags: ['Residential', 'Fire & Soot Damage', 'Multi-Trade', 'Full Rebuild'],
     coverImage: '/fr-project-3.png',
     gallery: ['/fr-project-3.png', '/fr-project-2.png', '/fr-project-5.png', '/fr-project-9.png', '/fr-project-4.png', '/fr-project-6.png', '/fr-project-7.png', '/fr-project-8.png'],
   },
   {
     id: 'p4',
     slug: 'mould-remediation-crawl-space',
-    title: 'Mould Remediation — Crawl Space',
+    title: 'Asbestos and Mould Remediation',
     category: 'Mould',
     location: 'Hamilton, ON',
-    scope: 'Attic — 1,400 sq ft',
-    duration: '5 days',
+    scope: 'Townhouse - 1,400 Sq Ft',
+    duration: '4 weeks',
     type: 'Residential',
     description:
-      'Inadequate attic ventilation led to extensive mould colonization across the sheathing. Arctiv established containment, performed full HEPA removal, applied antimicrobial treatment, and provided clearance testing documentation.',
+      'An older residential home sustained extensive water damage, requiring demolition work to be carried out under asbestos abatement protocols. The home also had pre-existing mould growth in areas where there are no asbestos. Arctiv completed material sampling, setup required containment chambers, safely remove and dispose affected materials, cleaned and decontaminated all areas, and conducted final clearance testing before reconstruction.',
     detail:
-      'The homeowners noticed a musty smell but assumed it was age. A home inspection for an upcoming sale revealed Class 3 mould across roughly 60% of the attic sheathing — a common outcome when soffit vents are blocked by insulation and ridge ventilation is undersized. Arctiv established negative-pressure containment before any disturbance, used HEPA-equipped tools throughout, and bagged all waste in double-sealed poly.',
+      'A faulty plumbing system caused extensive water damage throughout this older residential home. During the assessment, asbestos-containing materials were identified, requiring all demolition to be completed under asbestos abatement protocols. The homeowner also reported a persistent musty odour from one of the bedrooms, where further inspection revealed extensive mould growth caused by prolonged moisture exposure. Arctiv completed material sampling, containment, safe removal of affected materials, decontamination, and final clearance testing before reconstruction.',
     challenge:
-      'The sale closing date was 18 days away. Arctiv completed remediation, allowed the mandatory 48-hour settling period, and coordinated a third-party air quality test that returned clear results in time for the buyers\' home inspector to verify.',
+      'The project required managing three hazards simultaneously: extensive water damage, asbestos-containing materials, and widespread mould growth. Strict containment, material sampling, asbestos abatement, mould remediation, and moisture control were carefully coordinated to ensure the property could be safely restored without cross-contamination.',
     outcome:
-      'Clearance testing passed on first attempt. Attic ventilation was upgraded as part of scope. House sold on schedule.',
-    tags: ['Containment', 'HEPA Removal', 'Clearance Testing', 'Ventilation'],
+      'All asbestos-containing and mould-affected materials were safely removed, the property passed final clearance testing, and the home was certified ready for reconstruction with a clean and safe environment for the homeowners.',
+    tags: ['Sampling/Testing', 'Containment', 'HEPA Filtration', 'Decontamination', 'Clearance Testing', 'Removal & Disposal'],
     coverImage: '/project-4.jpg',
-    gallery: ['/project-4.jpg', '/project-1.jpg', '/project-5.jpg', '/project-3.jpg'],
+    gallery: ['/project-4.jpg', '/ab-project-1.jpeg', '/ab-project-2.jpeg', '/ab-project-3.jpeg', '/ab-project-4.jpeg'],
   },
   {
     id: 'p5',
@@ -117,18 +119,18 @@ export const projects: ProjectData[] = [
     location: 'Etobicoke, ON',
     scope: 'Single-Family Home',
     duration: '10 days',
-    type: 'Commercial',
+    type: 'Residential',
     description:
       'A sewage backup flooded the lower level of a residential property, leaving contaminated water across multiple rooms. Arctiv responded quickly to extract the water, sanitize the affected areas, and begin the restoration process to return the home to a safe condition.',
     detail:
-      'A sewer backup released contaminated water into the basement and hallway, affecting tiled floors and nearby finishes. Our team contained the affected areas, extracted the wastewater, completed sanitization, and began structural drying to prevent further damage.',
+      'A sewer backup released contaminated water into the basement and hallway, affecting tiled floors and nearby finishes. Our team contained the affected areas, extracted the wastewater, removed affected builidng materials, completed sanitization, and began structural drying to prevent further damage.',
     challenge:
-      'Contaminated water had spread through connected rooms, requiring careful containment and thorough disinfection to prevent cross-contamination.',
+      'Contaminated water had spread through connected rooms, requiring careful containment, tear-outs, and thorough disinfection to prevent cross-contamination.',
     outcome:
       'The affected areas were fully cleaned, sanitized, and dried to acceptable moisture levels. The home was safely prepared for repairs, and complete documentation was provided for the insurance claim.',
-    tags: ['Commercial', 'After-Hours Response', 'Office Restoration', 'Insurance'],
+    tags: ['Residential', 'After-Hours Response', 'Insurance'],
     coverImage: '/sw-project-11.jpeg',
-    gallery: ['/sw-project-11.jpeg', '/sw-project-5.jpeg', '/sw-project-2.jpeg', '/sw-project-9.jpeg', '/sw-project-7.jpeg'],
+    gallery: ['/sw-project-11.jpeg', '/sw-project-5.jpeg', '/sw-project-2.jpeg', '/sw-project-9.jpeg'],
   },
   {
     id: 'p6',
